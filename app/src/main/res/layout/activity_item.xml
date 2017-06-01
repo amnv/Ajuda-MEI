@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bt_editar"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Editar" />
+
+    <Button
+        android:id="@+id/bt_deletar"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Deletar" />
+
+    <TextView
+        android:id="@+id/entrada_saida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entrada/Saída diária" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="177dp"
+        android:layout_weight="0.29" />
+
+</LinearLayout>
