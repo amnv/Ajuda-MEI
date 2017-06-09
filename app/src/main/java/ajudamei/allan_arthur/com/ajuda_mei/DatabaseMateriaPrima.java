@@ -12,9 +12,11 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
 
     final private static String NAME = "materia_db";
     final private static Integer VERSION = 1;
+    final private Context mContext;
 
     public DatabaseMateriaPrima(Context context, SQLiteDatabase.CursorFactory factory) {
         super(context, NAME, factory, VERSION);
+        mContext = context;
     }
 
     @Override
@@ -25,5 +27,13 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public void insert(ItemMateriaPrima item) {
+
+    }
+
+    void deleteDatabase() {
+        mContext.deleteDatabase(NAME);
     }
 }
