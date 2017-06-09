@@ -34,9 +34,9 @@ public class Adapter extends ArrayAdapter<Item> {
         TextView tamanho = (TextView) convertView.findViewById(R.id.tamanho);
         tamanho.setText(temp.getTamanho());
         TextView preco = (TextView) convertView.findViewById(R.id.preco_und);
-        preco.setText((int) temp.getPreco());
+        preco.setText(String.valueOf(temp.getPreco()));
         TextView qnt = (TextView) convertView.findViewById(R.id.quantidade);
-        qnt.setText((int) temp.getQuantidade());
+        qnt.setText(String.valueOf(temp.getQuantidade()));
 
         return convertView;
     }
