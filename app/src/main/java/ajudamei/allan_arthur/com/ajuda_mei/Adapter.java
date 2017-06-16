@@ -13,10 +13,10 @@ import java.util.List;
  * Created by Allan on 31/05/2017.
  */
 
-public class Adapter extends ArrayAdapter<Item> {
+public class Adapter extends ArrayAdapter<ItemMateriaPrima> {
 
-    public Adapter(Context context, int resource, List<Item> objects) {
-        super(context, resource);
+    public Adapter(Context context, int resource, List<ItemMateriaPrima> objects) {
+        super(context, resource, objects);
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {

@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service
+            android:enabled="true"
+            android:name=".AtualizarMatPrimaService">
+        </service>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +23,9 @@
         <activity android:name=".TipoEstoqueActivity" />
         <activity android:name=".CaixaDaEmpresaActivity" />
         <activity android:name=".ListaPessoalActivity" />
-        <activity android:name=".EmpregadosActivity"></activity>
+        <activity android:name=".EmpregadosActivity" />
+        <activity android:name=".EscolherMatPrimaActivity" />
+        <activity android:name=".AdicionarMatPrimaActivity"></activity>
     </application>
 
 </manifest>

@@ -23,11 +23,11 @@
         tools:layout_editor_absoluteY="206dp"
         app:layout_constraintLeft_toRightOf="@+id/bt_ligar"
         android:layout_marginLeft="8dp"
-        app:layout_constraintRight_toLeftOf="@+id/bt_e-mail"
+        app:layout_constraintRight_toLeftOf="@+id/bt_email"
         android:layout_marginRight="8dp" />
 
     <Button
-        android:id="@+id/bt_e-mail"
+        android:id="@+id/bt_email"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="e-Mail"
@@ -52,13 +52,14 @@
         app:layout_constraintTop_toBottomOf="@+id/nome"
         android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent" />
+
     <TextView
-        android:id="@+id/e-mail"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E-Mail:"
         android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="28dp"
+        android:text="E-Mail:"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telefone" />
 </android.support.constraint.ConstraintLayout>

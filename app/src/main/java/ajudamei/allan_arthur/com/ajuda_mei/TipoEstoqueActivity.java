@@ -1,6 +1,7 @@
 package ajudamei.allan_arthur.com.ajuda_mei;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,8 @@ public class TipoEstoqueActivity extends Activity {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(TipoEstoqueActivity.this,EscolherMatPrimaActivity.class);
+                startActivity(intent);
             }
         });
 
