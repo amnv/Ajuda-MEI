@@ -6,7 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +37,8 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
                     + ITEM_TAMANHO + " TEXT NOT NULL, "
                     + ITEM_QUANTIDADE + " TEXT NOT NULL, "
                     + ITEM_PRECO + " TEXT NOT NULL, "
-                    + ITEM_FORMA_AQUISICAO + " TEXT NOT NULL"
+                    + ITEM_FORMA_AQUISICAO + " TEXT NOT NULL, "
+                    + ITEM_FOTO + " BLOB"
                     + ")";
 
     final private static String NAME = "materia_db";
@@ -66,7 +69,7 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
         values.put(DatabaseMateriaPrima.ITEM_QUANTIDADE, item.getQuantidade());
         values.put(DatabaseMateriaPrima.ITEM_PRECO, item.getPreco());
         values.put(DatabaseMateriaPrima.ITEM_FORMA_AQUISICAO, item.getFormaDeAquisicao());
-//        values.put(DatabaseMateriaPrima.ITEM_FOTO, item.getFoto());
+        values.put(DatabaseMateriaPrima.ITEM_FOTO, getBytes(item.getFoto()));
 
         db.insertWithOnConflict(TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
         db.close();
@@ -83,7 +86,7 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do{
                 ItemMateriaPrima temp = new ItemMateriaPrima(cursor.getString(1),cursor.getString(2), Double.parseDouble(cursor.getString(3)),
-                         cursor.getString(5),Double.parseDouble(cursor.getString(4)), null);
+                         cursor.getString(5),Double.parseDouble(cursor.getString(4)), getImage(cursor.getBlob(6)));
                 aux.add(temp);
 
             } while (cursor.moveToNext());
@@ -91,6 +94,18 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
         cursor.close();
 
         return aux;
+    }
+
+    // convert from bitmap to byte array
+    public static byte[] getBytes(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream);
+        return stream.toByteArray();
+    }
+
+    // convert from byte array to bitmap
+    public static Bitmap getImage(byte[] image) {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 
     void deleteDatabase() {

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -28,7 +29,8 @@ public class Adapter extends ArrayAdapter<ItemMateriaPrima> {
         }
 
         Item temp = getItem(position);
-
+        ImageView img = (ImageView) convertView.findViewById(R.id.imagem);
+        img.setImageBitmap(temp.getFoto());
         TextView nome = (TextView) convertView.findViewById(R.id.nome);
         nome.setText(temp.getNome());
         TextView tamanho = (TextView) convertView.findViewById(R.id.tamanho);
