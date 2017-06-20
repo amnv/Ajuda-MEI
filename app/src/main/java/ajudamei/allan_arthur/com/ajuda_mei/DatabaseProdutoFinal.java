@@ -25,6 +25,7 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
     final static String ITEM_TAMANHO = "tamanho";
     final static String ITEM_QUANTIDADE = "quantidade";
     final static String ITEM_PRECO = "preço";
+    final static String ITEM_DATA = "dataAdicao";
     final static String ITEM_FOTO = "foto";
 
     final private static String CREATE_CMD =
@@ -35,7 +36,7 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
                     + ITEM_TAMANHO + " TEXT NOT NULL, "
                     + ITEM_QUANTIDADE + " TEXT NOT NULL, "
                     + ITEM_PRECO + " TEXT NOT NULL, "
-                    + ITEM_FOTO + " " // ?
+                    + ITEM_FOTO + " BLOB"
                     + ")";
 
     final private static String NAME = "produto_db";
