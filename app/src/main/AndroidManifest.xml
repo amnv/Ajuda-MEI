@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ajudamei.allan_arthur.com.ajuda_mei">
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -12,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
-            android:enabled="true"
-            android:name=".AtualizarMatPrimaService">
-        </service>
+            android:name=".AtualizarMatPrimaService"
+            android:enabled="true" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +28,19 @@
         <activity android:name=".ListaPessoalActivity" />
         <activity android:name=".EmpregadosActivity" />
         <activity android:name=".EscolherMatPrimaActivity" />
-        <activity android:name=".AdicionarMatPrimaActivity"></activity>
+        <activity android:name=".AdicionarMatPrimaActivity" />
+        <activity
+            android:name=".PagamentoBoletoActivity"
+            android:label="@string/title_activity_pagamento_boleto" />
+        <activity
+            android:name=".VendaProdutoActivity"
+            android:label="@string/title_activity_venda_produto" />
+        <activity
+            android:name=".EntradaRecursosActivity"
+            android:label="@string/title_activity_entrada_recursos" />
+        <activity
+            android:name=".AquisicaoMatPrimaActivity"
+            android:label="@string/title_activity_aquisicao_mat_prima"></activity>
     </application>
 
 </manifest>
