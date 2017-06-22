@@ -1,6 +1,7 @@
 package ajudamei.allan_arthur.com.ajuda_mei;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,8 @@ public class CaixaDaEmpresaActivity extends Activity {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CaixaDaEmpresaActivity.this, PagamentoBoletoActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -25,7 +27,8 @@ public class CaixaDaEmpresaActivity extends Activity {
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CaixaDaEmpresaActivity.this, VendaProdutoActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -33,7 +36,8 @@ public class CaixaDaEmpresaActivity extends Activity {
         bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CaixaDaEmpresaActivity.this, EntradaRecursosActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -41,7 +45,8 @@ public class CaixaDaEmpresaActivity extends Activity {
         bt4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CaixaDaEmpresaActivity.this, AquisicaoMatPrimaActivity.class);
+                startActivity(intent);
             }
         });
     }

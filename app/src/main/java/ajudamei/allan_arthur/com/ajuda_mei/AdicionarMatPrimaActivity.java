@@ -7,9 +7,11 @@ import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import java.io.ByteArrayOutputStream;
 
@@ -19,7 +21,7 @@ public class AdicionarMatPrimaActivity extends Activity {
     private static final int CAMERA_REQUEST = 1;
     private static final int PICK_FROM_GALLERY = 2;
 
-
+    private static final String[] FORMAS = {"À vista", "Crédito (c/ fornecedor)", "Cheque", "Financiamento"};
 
 
     private Button confirmarAdd;
@@ -37,6 +39,11 @@ public class AdicionarMatPrimaActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_mat_prima);
+
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, FORMAS);
+        Spinner spinner = (Spinner) findViewById(R.id.spinnerFormaAquisicao);
+        stringArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(stringArrayAdapter);
 
         db = new DatabaseMateriaPrima(this);
 

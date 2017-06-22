@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Ajuda-MEI</string>
+    <string name="title_activity_pagamento_boleto">PagamentoBoletoActivity</string>
+    <string name="title_activity_venda_produto">VendaProdutoActivity</string>
+    <string name="title_activity_entrada_recursos">EntradaRecursosActivity</string>
+    <string name="title_activity_aquisicao_mat_prima">AquisicaoMatPrimaActivity</string>
 </resources>
