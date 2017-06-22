@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.Boleto;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.PagamentoBoletoActivity;
 
 public class CaixaDaEmpresaActivity extends Activity {
 
