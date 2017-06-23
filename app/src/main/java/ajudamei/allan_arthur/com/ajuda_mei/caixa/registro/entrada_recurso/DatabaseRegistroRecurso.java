@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto;
+package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.entrada_recurso;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Allan on 21/06/2017.
+ * Created by Allan on 22/06/2017.
  */
 
-public class DatabaseRegistroBoleto extends SQLiteOpenHelper {
+public class DatabaseRegistroRecurso extends SQLiteOpenHelper {
 
-    final static String TABLE_NAME = "boletos_registrados";
+    final static String TABLE_NAME = "recursos_registrados";
     final static String _ID = "_id";
 
     final static String ITEM_DESCRICAO = "descricao";
@@ -31,11 +31,11 @@ public class DatabaseRegistroBoleto extends SQLiteOpenHelper {
                     + ITEM_DATA + " TEXT NOT NULL "
                     + ")";
 
-    final private static String NAME = "boletos_db";
+    final private static String NAME = "recursos_db";
     final private static Integer VERSION = 1;
     final private Context mContext;
 
-    public DatabaseRegistroBoleto(Context context) {
+    public DatabaseRegistroRecurso(Context context) {
         super(context, NAME, null, VERSION);
         this.mContext = context;
     }
@@ -50,20 +50,20 @@ public class DatabaseRegistroBoleto extends SQLiteOpenHelper {
 
     }
 
-    public void insert(Boleto item) {
+    public void insert(Entrada item) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(DatabaseRegistroBoleto.ITEM_DESCRICAO, item.getNome());
-        values.put(DatabaseRegistroBoleto.ITEM_PRECO, item.getPreco());
-        values.put(DatabaseRegistroBoleto.ITEM_DATA, item.getData());
+        values.put(DatabaseRegistroRecurso.ITEM_DESCRICAO, item.getNome());
+        values.put(DatabaseRegistroRecurso.ITEM_PRECO, item.getPreco());
+        values.put(DatabaseRegistroRecurso.ITEM_DATA, item.getData());
 
         db.insertWithOnConflict(TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
         db.close();
     }
 
-    public List<Boleto> getAllItens(){
-        List<Boleto> aux = new ArrayList<Boleto>();
+    public List<Entrada> getAllItens(){
+        List<Entrada> aux = new ArrayList<Entrada>();
 
         String selectQuery = "SELECT * FROM " + TABLE_NAME;
 
@@ -72,7 +72,7 @@ public class DatabaseRegistroBoleto extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                Boleto temp = new Boleto(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3));
+                Entrada temp = new Entrada(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3));
                 aux.add(temp);
 
             } while (cursor.moveToNext());

@@ -4,39 +4,39 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewBoletoDescricao"
+        android:id="@+id/textViewEntradaRecursoDescricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Descrição" />
 
     <EditText
-        android:id="@+id/editTextBoletoDescricao"
+        android:id="@+id/editTextEntradaRecursoDescricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Descrição" />
     <TextView
-        android:id="@+id/textViewBoletoPreco"
+        android:id="@+id/textViewEntradaRecursoPreco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Preço" />
 
     <EditText
-        android:id="@+id/editTextBoletoPreco"
+        android:id="@+id/editTextEntradaRecursoPreco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Preço" />
     <TextView
-        android:id="@+id/textViewBoletoData"
+        android:id="@+id/textViewEntradaRecursoData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Data" />
 
     <EditText
-        android:id="@+id/editTextBoletoData"
+        android:id="@+id/editTextEntradaRecursoData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -44,9 +44,9 @@
         android:text="Data" />
 
     <Button
-        android:id="@+id/bt_adicionar_boleto"
+        android:id="@+id/bt_adicionar_entrada_recurso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Adicionar" />
+        android:text="Adicionar entra de recurso" />
 
 </LinearLayout>

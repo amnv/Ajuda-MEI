@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewAquisicaoDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descrição" />
+
+    <EditText
+        android:id="@+id/editTextAquisicaoDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Descrição" />
+    <TextView
+        android:id="@+id/textViewAquisicaoPreco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preço" />
+
+    <EditText
+        android:id="@+id/editTextAquisicaoPreco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Preço" />
+    <TextView
+        android:id="@+id/textViewAquisicaoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data" />
+
+    <EditText
+        android:id="@+id/editTextAquisicaoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Data" />
+
+    <Button
+        android:id="@+id/bt_adicionar_aquisicao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adicionar aquisição de materia prima" />
+
+</LinearLayout>

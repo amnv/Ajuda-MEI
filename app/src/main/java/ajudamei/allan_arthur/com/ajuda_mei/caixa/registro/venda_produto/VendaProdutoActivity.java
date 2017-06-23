@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto;
+package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.venda_produto;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,19 +12,19 @@ import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 
-public class PagamentoBoletoActivity extends Activity {
+public class VendaProdutoActivity extends Activity {
 
-    private DatabaseRegistroBoleto db;
-    private ListView itens;
+    DatabaseRegistroVenda db;
+    ListView vendas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrar_boleto);
+        setContentView(R.layout.activity_registrar_venda_produto);
 
-        db = new DatabaseRegistroBoleto(this);
+        db = new DatabaseRegistroVenda(this);
 
-        itens = (ListView) findViewById(R.id.lista_registro_boleto);
+        vendas = (ListView) findViewById(R.id.lista_registro_venda);
 
     }
 
@@ -38,7 +38,7 @@ public class PagamentoBoletoActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(PagamentoBoletoActivity.this, AdicionarBoletoActivity.class);
+        Intent intent = new Intent(VendaProdutoActivity.this, AdicionarVendaActivity.class);
         startActivity(intent);
         return (super.onOptionsItemSelected(item));
     }
@@ -46,11 +46,11 @@ public class PagamentoBoletoActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        List<Boleto> temp = db.getAllItens();
+        List<Venda> temp = db.getAllItens();
         Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
-        BoletoAdapter adapter = new BoletoAdapter(PagamentoBoletoActivity.this, R.layout.registrolista, temp);
+        VendaAdapter adapter = new VendaAdapter(VendaProdutoActivity.this, R.layout.registrolista, temp);
         if (temp != null) {
-            itens.setAdapter(adapter);
+            vendas.setAdapter(adapter);
         }
     }
 }

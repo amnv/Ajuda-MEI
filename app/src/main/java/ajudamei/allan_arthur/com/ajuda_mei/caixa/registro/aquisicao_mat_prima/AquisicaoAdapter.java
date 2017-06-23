@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto;
+package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.aquisicao_mat_prima;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,14 +11,15 @@ import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.Registro;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.Boleto;
 
 /**
  * Created by Allan on 22/06/2017.
  */
 
-public class BoletoAdapter extends ArrayAdapter<Boleto> {
+public class AquisicaoAdapter extends ArrayAdapter<Aquisicao> {
 
-    public BoletoAdapter(Context context, int resource, List<Boleto> objects) {
+    public AquisicaoAdapter(Context context, int resource, List<Aquisicao> objects) {
         super(context, resource, objects);
     }
 

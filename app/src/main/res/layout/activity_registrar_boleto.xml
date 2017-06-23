@@ -33,6 +33,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/scrollView">
-
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
