@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewBoletoDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descrição" />
+
+    <EditText
+        android:id="@+id/editTextBoletoDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Descrição" />
+    <TextView
+        android:id="@+id/textViewBoletoPreco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preço" />
+
+    <EditText
+        android:id="@+id/editTextBoletoPreco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Preço" />
+    <TextView
+        android:id="@+id/textViewBoletoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data" />
+
+    <EditText
+        android:id="@+id/editTextBoletoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Data" />
+
+    <Button
+        android:id="@+id/bt_adicionar_boleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adicionar boleto" />
+
+</LinearLayout>

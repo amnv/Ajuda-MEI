@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewEntradaRecursoDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descrição" />
+
+    <EditText
+        android:id="@+id/editTextEntradaRecursoDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Descrição" />
+    <TextView
+        android:id="@+id/textViewEntradaRecursoPreco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preço" />
+
+    <EditText
+        android:id="@+id/editTextEntradaRecursoPreco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Preço" />
+    <TextView
+        android:id="@+id/textViewEntradaRecursoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data" />
+
+    <EditText
+        android:id="@+id/editTextEntradaRecursoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Data" />
+
+    <Button
+        android:id="@+id/bt_adicionar_entrada_recurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adicionar entra de recurso" />
+
+</LinearLayout>
