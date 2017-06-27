@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".UsoGeral"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -29,33 +30,20 @@
         <activity android:name=".EmpregadosActivity" />
         <activity android:name=".EscolherMatPrimaActivity" />
         <activity android:name=".AdicionarMatPrimaActivity" />
-        <activity
-            android:name=".caixa.registro.boleto.Boleto$PagamentoBoletoActivity"
-            android:label="@string/title_activity_pagamento_boleto" />
-        <activity
-            android:name=".caixa.registro.venda_produto.VendaProdutoActivity"
-            android:label="@string/title_activity_venda_produto" />
-        <activity
-            android:name=".caixa.registro.entrada_recurso.EntradaRecursosActivity"
-            android:label="@string/title_activity_entrada_recursos" />
-        <activity
-            android:name=".caixa.registro.aquisicao_mat_prima.AquisicaoMatPrimaActivity"
-            android:label="@string/title_activity_aquisicao_mat_prima" />
-        <activity
-            android:name=".caixa.registro.boleto.AdicionarBoletoActivity"
-            android:label="@string/title_activity_adicionar_boleto" />
+        <activity android:name=".EscolherProdutoFinalActivity" />
         <activity
             android:name=".caixa.registro.boleto.PagamentoBoletoActivity"
             android:label="@string/title_activity_pagamento_boleto" />
         <activity
-            android:name=".caixa.registro.venda_produto.AdicionarVendaActivity"
-            android:label="@string/title_activity_adicionar_venda" />
+            android:name=".VendaProdutoActivity"
+            android:label="@string/title_activity_venda_produto" />
         <activity
-            android:name=".caixa.registro.aquisicao_mat_prima.AdicionarAquisicaoActivity"
-            android:label="@string/title_activity_adicionar_aquisicao" />
+            android:name=".EntradaRecursosActivity"
+            android:label="@string/title_activity_entrada_recursos" />
         <activity
-            android:name=".caixa.registro.entrada_recurso.AdicionarEntradaRecursoActivity"
-            android:label="@string/title_activity_adicionar_entrada_recurso"></activity>
+            android:name=".AquisicaoMatPrimaActivity"
+            android:label="@string/title_activity_aquisicao_mat_prima" />
+        <activity android:name=".ShowMatPrimaActivity"></activity>
     </application>
 
 </manifest>

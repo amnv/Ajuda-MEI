@@ -62,7 +62,7 @@ public class AdicionarMatPrimaActivity extends Activity {
                 BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
                 Bitmap bitmap = drawable.getBitmap();
                 ItemMateriaPrima aux = new ItemMateriaPrima(nome.getText().toString() ,tamanho.getText().toString(), Double.parseDouble(quantidade.getText().toString()),
-                        "avista", Double.parseDouble(preco.getText().toString()),bitmap);
+                        "avista", Double.parseDouble(preco.getText().toString()),bitmap, null);
 
                 db.insert(aux);
             }
@@ -99,11 +99,6 @@ public class AdicionarMatPrimaActivity extends Activity {
 
             if (extras != null) {
                 Bitmap yourImage = extras.getParcelable("data");
-                // convert bitmap to byte
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                assert yourImage != null;
-                yourImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte imageInByte[] = stream.toByteArray();
                 ImageView img = (ImageView)findViewById(R.id.img_view_foto);
                 img.setImageBitmap(yourImage);
 
@@ -115,11 +110,7 @@ public class AdicionarMatPrimaActivity extends Activity {
 
             if (extras2 != null) {
                 Bitmap yourImage = extras2.getParcelable("data");
-                // convert bitmap to byte
-                ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                assert yourImage != null;
-                yourImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                byte imageInByte[] = stream.toByteArray();
+
                 ImageView img = (ImageView)findViewById(R.id.img_view_foto);
                 img.setImageBitmap(yourImage);
 

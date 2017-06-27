@@ -84,7 +84,7 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do{
                 ItemProdutoFinal temp = new ItemProdutoFinal(cursor.getString(1),cursor.getString(2), Double.parseDouble(cursor.getString(3)),
-                        Double.parseDouble(cursor.getString(4)), getImage(cursor.getBlob(5)));
+                        Double.parseDouble(cursor.getString(4)), getImage(cursor.getBlob(5)), null);
                 aux.add(temp);
 
             } while (cursor.moveToNext());

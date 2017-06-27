@@ -12,13 +12,15 @@ public class Item {
     private double quantidade;
     private double preco;
     private Bitmap foto;
+    private String data;
 
-    public Item(String nome, String tamanho, double quantidade, double preco, Bitmap foto) {
+    public Item(String nome, String tamanho, double quantidade, double preco, Bitmap foto, String data) {
         this.nome = nome;
         this.tamanho = tamanho;
         this.quantidade = quantidade;
         this.preco = preco;
         this.foto = foto;
+        this.data = data;
     }
 
     public String getNome() {
@@ -64,5 +66,13 @@ public class Item {
     public Item setFoto(Bitmap foto) {
         this.foto = foto;
         return this;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 }

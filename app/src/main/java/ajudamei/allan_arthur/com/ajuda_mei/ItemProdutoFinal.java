@@ -10,8 +10,8 @@ public class ItemProdutoFinal extends Item{
 
 
     public ItemProdutoFinal(String nome, String tamanho, double quantidade,
-                            double preco, Bitmap foto){
-        super(nome, tamanho, quantidade, preco, foto);
+                            double preco, Bitmap foto, String data){
+        super(nome, tamanho, quantidade, preco, foto, data);
     }
 
 }

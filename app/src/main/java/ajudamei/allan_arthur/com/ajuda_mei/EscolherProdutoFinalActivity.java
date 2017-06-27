@@ -5,36 +5,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.List;
 
-public class EscolherMatPrimaActivity extends Activity {
+public class EscolherProdutoFinalActivity extends Activity {
     private DatabaseMateriaPrima db;
     private ListView itens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_escolher_mat_prima);
+        setContentView(R.layout.activity_escolher_produto_final);
 
         db = new DatabaseMateriaPrima(this);
 
-        itens = (ListView) findViewById(R.id.lista_mat_prima);
-
-        itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ItemMateriaPrima item = (ItemMateriaPrima) parent.getItemAtPosition(position);
-                UsoGeral g = (UsoGeral) getApplication();
-                g.setItem(item);
-                Intent intent = new Intent(EscolherMatPrimaActivity.this, ShowMatPrimaActivity.class);
-                startActivity(intent);
-            }
-        });
+        itens = (ListView) findViewById(R.id.lista_produto_final);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,7 +32,7 @@ public class EscolherMatPrimaActivity extends Activity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(EscolherMatPrimaActivity.this,AdicionarMatPrimaActivity.class);
+        Intent intent = new Intent(EscolherProdutoFinalActivity.this,AdicionarMatPrimaActivity.class);
         startActivity(intent);
         return(super.onOptionsItemSelected(item));
     }
@@ -53,8 +40,8 @@ public class EscolherMatPrimaActivity extends Activity {
     protected void onStart() {
         super.onStart();
         List<ItemMateriaPrima> temp = db.getAllItens();
-        //Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
-        Adapter adapter = new Adapter(EscolherMatPrimaActivity.this, R.layout.itemlista, temp);
+        Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
+        Adapter adapter = new Adapter(EscolherProdutoFinalActivity.this, R.layout.itemlista, temp);
         if(temp != null) {
             itens.setAdapter(adapter);
         }
