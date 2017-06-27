@@ -41,7 +41,7 @@ public class EscolherMatPrimaActivity extends Activity {
         super.onStart();
         List<ItemMateriaPrima> temp = db.getAllItens();
         Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
-        Adapter adapter = new Adapter(EscolherMatPrimaActivity.this, R.layout.itemlista, temp);
+        AdapterMateria adapter = new AdapterMateria(EscolherMatPrimaActivity.this, R.layout.itemlista, temp);
         if(temp != null) {
             itens.setAdapter(adapter);
         }

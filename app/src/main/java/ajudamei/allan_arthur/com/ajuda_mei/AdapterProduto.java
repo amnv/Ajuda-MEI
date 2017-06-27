@@ -11,13 +11,13 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by Allan on 31/05/2017.
+ * Created by Allan on 27/06/2017.
  */
 
-public class Adapter extends ArrayAdapter<ItemMateriaPrima> {
+public class AdapterProduto extends ArrayAdapter<ItemProdutoFinal> {
 
-    public Adapter(Context context, int resource, List<ItemMateriaPrima> objects) {
-        super(context, resource, objects);
+    public AdapterProduto(Context context, int resource, List<ItemProdutoFinal> objects) {
+         super(context, resource, objects);
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
