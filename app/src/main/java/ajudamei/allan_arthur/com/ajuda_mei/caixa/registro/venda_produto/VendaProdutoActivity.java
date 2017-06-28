@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -17,29 +19,34 @@ import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.ItemMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.ItemProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.ShowMatPrimaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 
 public class VendaProdutoActivity extends Activity {
 
-    DatabaseMateriaPrima db;
+    DatabaseProdutoFinal db;
     ListView vendas;
+    UsoGeral ug;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_venda_produto);
 
-        db = new DatabaseMateriaPrima(this);
-        vendas = (ListView) findViewById(R.id.lista_mat_prima);
+        db = new DatabaseProdutoFinal(this);
 
-    }
+        vendas = (ListView) findViewById(R.id.lista_registro_venda);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        MenuItem trocar = menu.add(0, 0, 0, "Adicionar");
-        trocar.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        return super.onCreateOptionsMenu(menu);
+        vendas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ItemMateriaPrima item = (ItemMateriaPrima) parent.getItemAtPosition(position);
+                ug = (UsoGeral) getApplication();
+                ug.setItem(item);
+                Intent intent = new Intent(VendaProdutoActivity.this, ShowMatPrimaActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -52,9 +59,9 @@ public class VendaProdutoActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        List<ItemMateriaPrima> temp = db.getAllItens();
+        List<ItemProdutoFinal> temp = db.getAllItens();
         Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
-        AdapterMateria adapter = new AdapterMateria(VendaProdutoActivity.this, R.layout.itemlista, temp);
+        AdapterProduto adapter = new AdapterProduto(VendaProdutoActivity.this, R.layout.itemlista, temp);
         if (temp != null) {
             vendas.setAdapter(adapter);
         }
