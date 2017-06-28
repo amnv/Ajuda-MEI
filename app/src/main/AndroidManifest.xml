@@ -35,13 +35,13 @@
             android:name=".caixa.registro.boleto.PagamentoBoletoActivity"
             android:label="@string/title_activity_pagamento_boleto" />
         <activity
-            android:name=".VendaProdutoActivity"
+            android:name=".caixa.registro.venda_produto.VendaProdutoActivity"
             android:label="@string/title_activity_venda_produto" />
         <activity
-            android:name=".EntradaRecursosActivity"
+            android:name=".caixa.registro.entrada_recurso.EntradaRecursosActivity"
             android:label="@string/title_activity_entrada_recursos" />
         <activity
-            android:name=".AquisicaoMatPrimaActivity"
+            android:name=".caixa.registro.aquisicao_mat_prima.AquisicaoMatPrimaActivity"
             android:label="@string/title_activity_aquisicao_mat_prima" />
         <activity android:name=".ShowMatPrimaActivity" />
         <activity android:name=".AdicionarProdutoFinalActivity"></activity>

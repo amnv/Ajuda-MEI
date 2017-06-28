@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class AdicionarProdutoFinalActivity extends Activity {
-    private DatabaseMateriaPrima db;
     private DatabaseProdutoFinal db2;
     private static final int CAMERA_REQUEST = 1;
     private static final int PICK_FROM_GALLERY = 2;
@@ -34,7 +33,6 @@ public class AdicionarProdutoFinalActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_produto_final);
 
-        db = new DatabaseMateriaPrima(this);
         db2 = new DatabaseProdutoFinal(this);
         confirmarAdd = (Button) findViewById(R.id.bt_adicionar_mat_prima_ao_estoque);
         tirarFoto = (Button) findViewById(R.id.bt_tirar_foto);
@@ -61,8 +59,9 @@ public class AdicionarProdutoFinalActivity extends Activity {
                 BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
                 Bitmap bitmap = drawable.getBitmap();
 
+                ItemProdutoFinal aux = new ItemProdutoFinal(nome.getText().toString() ,tamanho.getText().toString(), Double.parseDouble(quantidade.getText().toString()), Double.parseDouble(preco.getText().toString()),bitmap, null);
 
-                //db.insert(aux);
+                db2.insert(aux);
                 Intent intent = new Intent(AdicionarProdutoFinalActivity.this, EscolherProdutoFinalActivity.class);
                 Toast.makeText(getApplicationContext(), "Item adicionado!", Toast.LENGTH_SHORT).show();
                 startActivity(intent);

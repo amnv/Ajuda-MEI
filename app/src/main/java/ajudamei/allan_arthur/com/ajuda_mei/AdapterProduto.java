@@ -11,13 +11,13 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by Allan on 31/05/2017.
+ * Created by Allan on 27/06/2017.
  */
 
-public class Adapter extends ArrayAdapter<ItemMateriaPrima> {
+public class AdapterProduto extends ArrayAdapter<ItemProdutoFinal> {
 
-    public Adapter(Context context, int resource, List<ItemMateriaPrima> objects) {
-        super(context, resource, objects);
+    public AdapterProduto(Context context, int resource, List<ItemProdutoFinal> objects) {
+         super(context, resource, objects);
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -32,14 +32,13 @@ public class Adapter extends ArrayAdapter<ItemMateriaPrima> {
         ImageView img = (ImageView) convertView.findViewById(R.id.imagem);
         img.setImageBitmap(temp.getFoto());
         TextView nome = (TextView) convertView.findViewById(R.id.nome);
-        nome.setText("Nome: " + temp.getNome());
+        nome.setText(temp.getNome());
         TextView tamanho = (TextView) convertView.findViewById(R.id.tamanho);
-        tamanho.setText("Tamanho: " + temp.getTamanho());
+        tamanho.setText(temp.getTamanho());
         TextView preco = (TextView) convertView.findViewById(R.id.preco_und);
-        preco.setText("Preço: R$" + String.valueOf(temp.getPreco()));
+        preco.setText(String.valueOf(temp.getPreco()));
         TextView qnt = (TextView) convertView.findViewById(R.id.quantidade);
-        qnt.setText("Qtd: " + String.valueOf(temp.getQuantidade()));
-        //qnt.setText("Data: " + temp.getData());
+        qnt.setText(String.valueOf(temp.getQuantidade()));
 
         return convertView;
     }
