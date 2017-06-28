@@ -7,24 +7,18 @@ import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
-
-public class AdicionarMatPrimaActivity extends Activity {
+public class AdicionarProdutoFinalActivity extends Activity {
     private DatabaseMateriaPrima db;
-
+    private DatabaseProdutoFinal db2;
     private static final int CAMERA_REQUEST = 1;
     private static final int PICK_FROM_GALLERY = 2;
 
-    private static final String[] FORMAS = {"À vista", "Crédito (c/ fornecedor)", "Cheque", "Financiamento"};
-
-
+    private Button goToMatPrima;
     private Button confirmarAdd;
     private Button tirarFoto;
     private Button escolherFoto;
@@ -35,19 +29,13 @@ public class AdicionarMatPrimaActivity extends Activity {
     private EditText tamanho;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adicionar_mat_prima);
-
-        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, FORMAS);
-        Spinner spinner = (Spinner) findViewById(R.id.spinnerFormaAquisicao);
-        stringArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(stringArrayAdapter);
+        setContentView(R.layout.activity_adicionar_produto_final);
 
         db = new DatabaseMateriaPrima(this);
-
+        db2 = new DatabaseProdutoFinal(this);
         confirmarAdd = (Button) findViewById(R.id.bt_adicionar_mat_prima_ao_estoque);
         tirarFoto = (Button) findViewById(R.id.bt_tirar_foto);
         escolherFoto = (Button) findViewById(R.id.bt_escolher_foto);
@@ -56,17 +44,26 @@ public class AdicionarMatPrimaActivity extends Activity {
         preco = (EditText) findViewById(R.id.editTextPreco);
         tamanho = (EditText) findViewById(R.id.editTextTamanho);
         img = (ImageView) findViewById(R.id.img_view_foto);
+        goToMatPrima = (Button) findViewById(R.id.bt_escolher_mat_prima);
 
+
+        goToMatPrima.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdicionarProdutoFinalActivity.this, EscolherMatPrimaActivity.class);
+                startActivity(intent);
+
+            }
+        });
         confirmarAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
                 Bitmap bitmap = drawable.getBitmap();
-                ItemMateriaPrima aux = new ItemMateriaPrima(nome.getText().toString() ,tamanho.getText().toString(), Double.parseDouble(quantidade.getText().toString()),
-                        "avista", Double.parseDouble(preco.getText().toString()),bitmap, null);
 
-                db.insert(aux);
-                Intent intent = new Intent(AdicionarMatPrimaActivity.this, EscolherMatPrimaActivity.class);
+
+                //db.insert(aux);
+                Intent intent = new Intent(AdicionarProdutoFinalActivity.this, EscolherProdutoFinalActivity.class);
                 Toast.makeText(getApplicationContext(), "Item adicionado!", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
@@ -87,8 +84,6 @@ public class AdicionarMatPrimaActivity extends Activity {
 
             }
         });
-
-
     }
 
     @Override
@@ -124,6 +119,7 @@ public class AdicionarMatPrimaActivity extends Activity {
         }
 
     }
+
 
     /**
      * open camera method

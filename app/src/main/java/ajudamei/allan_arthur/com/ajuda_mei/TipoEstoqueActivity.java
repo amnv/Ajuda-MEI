@@ -27,7 +27,8 @@ public class TipoEstoqueActivity extends Activity {
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(TipoEstoqueActivity.this,EscolherProdutoFinalActivity.class);
+                startActivity(intent);
             }
         });
     }

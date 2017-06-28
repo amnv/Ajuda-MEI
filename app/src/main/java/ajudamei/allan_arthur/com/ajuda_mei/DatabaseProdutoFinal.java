@@ -36,7 +36,8 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
                     + ITEM_TAMANHO + " TEXT NOT NULL, "
                     + ITEM_QUANTIDADE + " TEXT NOT NULL, "
                     + ITEM_PRECO + " TEXT NOT NULL, "
-                    + ITEM_FOTO + " BLOB"
+                    + ITEM_FOTO + " BLOB, "
+                    + ITEM_DATA + " TEXT NOT NULL"
                     + ")";
 
     final private static String NAME = "produto_db";
@@ -84,7 +85,7 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do{
                 ItemProdutoFinal temp = new ItemProdutoFinal(cursor.getString(1),cursor.getString(2), Double.parseDouble(cursor.getString(3)),
-                        Double.parseDouble(cursor.getString(4)), getImage(cursor.getBlob(5)));
+                        Double.parseDouble(cursor.getString(4)), getImage(cursor.getBlob(5)), null);
                 aux.add(temp);
 
             } while (cursor.moveToNext());
