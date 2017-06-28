@@ -10,11 +10,14 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.AdapterProduto;
+import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.ItemProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 
 public class VendaProdutoActivity extends Activity {
 
-    DatabaseRegistroVenda db;
+    DatabaseProdutoFinal db;
     ListView vendas;
 
     @Override
@@ -22,7 +25,7 @@ public class VendaProdutoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_venda_produto);
 
-        db = new DatabaseRegistroVenda(this);
+        db = new DatabaseProdutoFinal(this);
 
         vendas = (ListView) findViewById(R.id.lista_registro_venda);
 
@@ -46,9 +49,9 @@ public class VendaProdutoActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        List<Venda> temp = db.getAllItens();
+        List<ItemProdutoFinal> temp = db.getAllItens();
         Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
-        VendaAdapter adapter = new VendaAdapter(VendaProdutoActivity.this, R.layout.registrolista, temp);
+        AdapterProduto adapter = new AdapterProduto(VendaProdutoActivity.this, R.layout.registrolista, temp);
         if (temp != null) {
             vendas.setAdapter(adapter);
         }

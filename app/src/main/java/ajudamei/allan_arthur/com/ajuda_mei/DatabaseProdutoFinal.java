@@ -43,8 +43,8 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
     final private static Integer VERSION = 1;
     final private Context mContext;
 
-    public DatabaseProdutoFinal(Context context, SQLiteDatabase.CursorFactory factory) {
-        super(context, NAME, factory, VERSION);
+    public DatabaseProdutoFinal(Context context) {
+        super(context, NAME, null, VERSION);
         mContext = context;
     }
 
