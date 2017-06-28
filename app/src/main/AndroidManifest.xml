@@ -43,7 +43,8 @@
         <activity
             android:name=".AquisicaoMatPrimaActivity"
             android:label="@string/title_activity_aquisicao_mat_prima" />
-        <activity android:name=".ShowMatPrimaActivity"></activity>
+        <activity android:name=".ShowMatPrimaActivity" />
+        <activity android:name=".AdicionarProdutoFinalActivity"></activity>
     </application>
 
 </manifest>

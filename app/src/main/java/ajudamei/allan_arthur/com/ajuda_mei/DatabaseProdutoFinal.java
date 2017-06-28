@@ -36,15 +36,16 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
                     + ITEM_TAMANHO + " TEXT NOT NULL, "
                     + ITEM_QUANTIDADE + " TEXT NOT NULL, "
                     + ITEM_PRECO + " TEXT NOT NULL, "
-                    + ITEM_FOTO + " BLOB"
+                    + ITEM_FOTO + " BLOB, "
+                    + ITEM_DATA + " TEXT NOT NULL"
                     + ")";
 
     final private static String NAME = "produto_db";
     final private static Integer VERSION = 1;
     final private Context mContext;
 
-    public DatabaseProdutoFinal(Context context, SQLiteDatabase.CursorFactory factory) {
-        super(context, NAME, factory, VERSION);
+    public DatabaseProdutoFinal(Context context) {
+        super(context, NAME, null, VERSION);
         mContext = context;
     }
 

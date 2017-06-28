@@ -10,6 +10,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class ShowMatPrimaActivity extends Activity {
     private ListView registro;
     private ImageView imagem;
@@ -45,5 +47,19 @@ public class ShowMatPrimaActivity extends Activity {
         Intent intent = new Intent(ShowMatPrimaActivity.this,EscolherMatPrimaActivity.class);
         startActivity(intent);
         return(super.onOptionsItemSelected(item));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        g = (UsoGeral) getApplication();
+
+
+        List<Registro> temp = db.getAllRegistros(g.getItem());
+        //Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
+        AdapterRegistro adapter = new AdapterRegistro(ShowMatPrimaActivity.this, R.layout.itemlista, temp);
+        if(temp != null) {
+            registro.setAdapter(adapter);
+        }
     }
 }

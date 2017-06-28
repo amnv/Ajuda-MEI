@@ -2,8 +2,6 @@ package ajudamei.allan_arthur.com.ajuda_mei;
 
 import android.app.Application;
 
-import java.util.List;
-
 /**
  * Created by arthur on 26/06/17.
  */

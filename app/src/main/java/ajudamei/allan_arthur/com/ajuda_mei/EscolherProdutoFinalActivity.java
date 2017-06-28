@@ -32,18 +32,20 @@ public class EscolherProdutoFinalActivity extends Activity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(EscolherProdutoFinalActivity.this,AdicionarMatPrimaActivity.class);
+        Intent intent = new Intent(EscolherProdutoFinalActivity.this,AdicionarProdutoFinalActivity.class);
         startActivity(intent);
         return(super.onOptionsItemSelected(item));
     }
     @Override
     protected void onStart() {
         super.onStart();
+        /*
         List<ItemMateriaPrima> temp = db.getAllItens();
         Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
         Adapter adapter = new Adapter(EscolherProdutoFinalActivity.this, R.layout.itemlista, temp);
         if(temp != null) {
-            itens.setAdapter(adapter);
+           itens.setAdapter(adapter);
         }
+        */
     }
 }
