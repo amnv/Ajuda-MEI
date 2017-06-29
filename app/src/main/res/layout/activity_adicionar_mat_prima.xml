@@ -67,7 +67,7 @@
         android:layout_marginEnd="8dp" />
 
     <Spinner
-        android:id="@+id/spinnerFormaAquisicao"
+        android:id="@+id/spinnerTipoPessoa"
         android:layout_width="190dp"
         android:layout_height="36dp"
         android:layout_marginRight="16dp"
@@ -160,7 +160,7 @@
         android:src="@drawable/ic_action_clear"
         app:layout_constraintBottom_toTopOf="@+id/bt_adicionar_mat_prima_ao_estoque"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerFormaAquisicao"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTipoPessoa"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintRight_creator="1"

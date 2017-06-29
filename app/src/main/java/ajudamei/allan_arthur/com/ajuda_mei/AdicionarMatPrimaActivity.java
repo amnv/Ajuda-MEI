@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,8 +12,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import java.io.ByteArrayOutputStream;
 
 public class AdicionarMatPrimaActivity extends Activity {
     private DatabaseMateriaPrima db;
@@ -42,7 +39,7 @@ public class AdicionarMatPrimaActivity extends Activity {
         setContentView(R.layout.activity_adicionar_mat_prima);
 
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, FORMAS);
-        Spinner spinner = (Spinner) findViewById(R.id.spinnerFormaAquisicao);
+        Spinner spinner = (Spinner) findViewById(R.id.spinnerTipoPessoa);
         stringArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(stringArrayAdapter);
 
