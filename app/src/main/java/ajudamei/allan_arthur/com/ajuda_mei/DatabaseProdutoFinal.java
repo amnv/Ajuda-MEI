@@ -74,6 +74,12 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void delete (ItemProdutoFinal item)  {
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + ITEM_NOME + "= '" + item.getNome() + "'");
+        database.close();
+    }
+
     public List<ItemProdutoFinal> getAllItens(){
         List<ItemProdutoFinal> aux = new ArrayList<>();
 
