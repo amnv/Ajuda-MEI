@@ -8,4 +8,7 @@
     <string name="title_activity_adicionar_venda">AdicionarVendaActivity</string>
     <string name="title_activity_adicionar_aquisicao">AdicionarAquisicaoActivity</string>
     <string name="title_activity_adicionar_entrada_recurso">AdicionarEntradaRecursoActivity</string>
+    <string name="title_activity_show_produto_final">ShowProdutoFinalActivity</string>
+    <string name="title_activity_show_registro_venda_produto">ShowRegistroVendaProdutoActivity
+    </string>
 </resources>

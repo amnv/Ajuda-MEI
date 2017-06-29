@@ -20,6 +20,7 @@ import ajudamei.allan_arthur.com.ajuda_mei.ItemMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.ItemProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.ShowMatPrimaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.ShowProdutoFinalActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 
 public class VendaProdutoActivity extends Activity {
@@ -40,10 +41,10 @@ public class VendaProdutoActivity extends Activity {
         vendas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ItemMateriaPrima item = (ItemMateriaPrima) parent.getItemAtPosition(position);
+                ItemProdutoFinal item = (ItemProdutoFinal) parent.getItemAtPosition(position);
                 ug = (UsoGeral) getApplication();
-                ug.setItem(item);
-                Intent intent = new Intent(VendaProdutoActivity.this, ShowMatPrimaActivity.class);
+                ug.setProduto(item);
+                Intent intent = new Intent(VendaProdutoActivity.this, ShowRegistroVendaProdutoActivity.class);
                 startActivity(intent);
             }
         });
