@@ -51,13 +51,6 @@ public class VendaProdutoActivity extends Activity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(VendaProdutoActivity.this, AdicionarVendaActivity.class);
-        startActivity(intent);
-        return (super.onOptionsItemSelected(item));
-    }
-
-    @Override
     protected void onStart() {
         super.onStart();
         List<ItemProdutoFinal> temp = db.getAllItens();

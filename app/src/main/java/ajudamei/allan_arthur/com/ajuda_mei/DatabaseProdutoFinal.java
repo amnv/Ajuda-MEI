@@ -74,6 +74,19 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void update(ItemProdutoFinal item) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DatabaseProdutoFinal.ITEM_NOME, item.getNome());
+        values.put(DatabaseProdutoFinal.ITEM_TAMANHO, item.getTamanho());
+        values.put(DatabaseProdutoFinal.ITEM_QUANTIDADE, item.getQuantidade());
+        values.put(DatabaseProdutoFinal.ITEM_PRECO, item.getPreco());
+        values.put(DatabaseProdutoFinal.ITEM_FOTO, getBytes(item.getFoto()));
+
+        db.update(DatabaseProdutoFinal.TABLE_NAME, values, DatabaseProdutoFinal.ITEM_NOME + "=" + item.getNome(), null);
+        db.close();
+    }
+
     public void delete (ItemProdutoFinal item)  {
         SQLiteDatabase database = this.getWritableDatabase();
         database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + ITEM_NOME + "= '" + item.getNome() + "'");
