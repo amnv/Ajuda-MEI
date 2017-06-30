@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +24,17 @@ public class EscolherProdutoFinalActivity extends Activity {
         db = new DatabaseProdutoFinal(this);
 
         itens = (ListView) findViewById(R.id.lista_produto_final);
+
+        itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ItemProdutoFinal item = (ItemProdutoFinal) parent.getItemAtPosition(position);
+                UsoGeral g = (UsoGeral) getApplication();
+                g.setProduto(item);
+                Intent intent = new Intent(EscolherProdutoFinalActivity.this, ShowProdutoFinalActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
