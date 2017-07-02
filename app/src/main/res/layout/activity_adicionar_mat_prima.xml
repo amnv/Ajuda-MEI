@@ -75,10 +75,10 @@
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintBottom_creator="1"
         android:layout_marginTop="5dp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPreco" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_preco" />
 
     <EditText
-        android:id="@+id/editTextNome"
+        android:id="@+id/txt_nome"
         android:layout_width="190dp"
         android:layout_height="36dp"
         android:ems="10"
@@ -95,7 +95,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTamanho"
+        android:id="@+id/txt_tam"
         android:layout_width="190dp"
         android:layout_height="36dp"        android:ems="10"
         android:inputType="textPersonName"
@@ -104,10 +104,10 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintTop_creator="1"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_nome" />
 
     <EditText
-        android:id="@+id/editTextQuantidade"
+        android:id="@+id/txt_qtd"
         android:layout_width="190dp"
         android:layout_height="36dp"
         android:ems="10"
@@ -117,10 +117,10 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintTop_creator="1"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTamanho" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_tam" />
 
     <EditText
-        android:id="@+id/editTextPreco"
+        android:id="@+id/txt_preco"
         android:layout_width="190dp"
         android:layout_height="36dp"
         android:ems="10"
@@ -130,7 +130,7 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintTop_creator="1"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextQuantidade" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_qtd" />
 
     <TextView
         android:id="@+id/foto"

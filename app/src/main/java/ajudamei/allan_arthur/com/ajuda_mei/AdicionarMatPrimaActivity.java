@@ -48,10 +48,10 @@ public class AdicionarMatPrimaActivity extends Activity {
         confirmarAdd = (Button) findViewById(R.id.bt_adicionar_mat_prima_ao_estoque);
         tirarFoto = (Button) findViewById(R.id.bt_tirar_foto);
         escolherFoto = (Button) findViewById(R.id.bt_escolher_foto);
-        nome = (EditText) findViewById(R.id.editTextNome);
-        quantidade = (EditText) findViewById(R.id.editTextQuantidade);
-        preco = (EditText) findViewById(R.id.editTextPreco);
-        tamanho = (EditText) findViewById(R.id.editTextTamanho);
+        nome = (EditText) findViewById(R.id.txt_nome);
+        quantidade = (EditText) findViewById(R.id.txt_qtd);
+        preco = (EditText) findViewById(R.id.txt_preco);
+        tamanho = (EditText) findViewById(R.id.txt_tam);
         img = (ImageView) findViewById(R.id.img_view_foto);
 
         confirmarAdd.setOnClickListener(new View.OnClickListener() {

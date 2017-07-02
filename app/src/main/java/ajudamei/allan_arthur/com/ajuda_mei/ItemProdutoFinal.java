@@ -7,11 +7,21 @@ import android.graphics.Bitmap;
  */
 
 public class ItemProdutoFinal extends Item{
-
+    private double custoProducao;
 
     public ItemProdutoFinal(String nome, String tamanho, double quantidade,
-                            double preco, Bitmap foto, String data){
+                            double preco, Bitmap foto, String data, double custoProducao){
         super(nome, tamanho, quantidade, preco, foto, data);
+        this.custoProducao = custoProducao;
     }
+
+    public double getCustoProducao() {
+        return custoProducao;
+    }
+
+    public void setCustoProducao(double custoProducao) {
+        this.custoProducao = custoProducao;
+    }
+
 
 }

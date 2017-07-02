@@ -36,6 +36,7 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
     final static String REG_MAT_PRIMA = "matPrima";
     final static String REG_DATA = "dataRegistro";
     final static String REG_SALDO = "saldo";
+    final static String REG_TIPO = "tipo";
 
     final private static String CREATE_CMD =
 
@@ -57,6 +58,7 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
                     + REG_MAT_PRIMA + " TEXT NOT NULL, "
                     + REG_DATA + " TEXT NOT NULL, "
                     + REG_SALDO + " TEXT NOT NULL, "
+//                    + REG_TIPO + " TEXT NOT NULL, "
                     + " FOREIGN KEY(matPrima) REFERENCES materiaprima(name))";
     final private static String NAME = "materia_db";
     final private static Integer VERSION = 1;
@@ -93,18 +95,43 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
         values.put(DatabaseMateriaPrima.ITEM_DATA, dateFormat.format(date));
 
         db.insertWithOnConflict(TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
-        insert(item.getNome(), dateFormat.format(date),(int)item.getQuantidade());
+        insert(item.getNome(), dateFormat.format(date),(int)item.getQuantidade(), "adicao");
         db.close();
     }
 
-    public void insert(String nome, String data, int modificacao){
+    public void insert(String nome, String data, int modificacao, String tipo){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(DatabaseMateriaPrima.REG_DATA, data);
         values.put(DatabaseMateriaPrima.REG_MAT_PRIMA, nome);
         values.put(DatabaseMateriaPrima.REG_SALDO, modificacao);
+        //values.put(DatabaseMateriaPrima.REG_TIPO, tipo);
 
         db.insertWithOnConflict(TABLE2_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
+    }
+
+    public void modify(ItemMateriaPrima item, int quantidade){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + _ID +" FROM "
+                + TABLE_NAME + " WHERE " + ITEM_NOME + "= '" + item.getNome()+ "'";
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                ContentValues values = new ContentValues();
+                values.put(DatabaseMateriaPrima.ITEM_QUANTIDADE, item.getQuantidade() - quantidade);
+
+                db.update(TABLE_NAME, values, "_id= "+ cursor.getInt(0), null);
+
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        insert(item.getNome(), dateFormat.format(date), -(quantidade), "retirada");
+
     }
 
     public void delete (ItemMateriaPrima item)  {
@@ -124,7 +151,8 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                Registro temp = new Registro(cursor.getString(0), Integer.parseInt(cursor.getString(1)));
+                Registro temp = new Registro(cursor.getString(0), Integer.parseInt(cursor.getString(1)),
+                        "add");
                 aux.add(temp);
             } while (cursor.moveToNext());
 

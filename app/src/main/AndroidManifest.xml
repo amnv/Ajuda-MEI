@@ -51,7 +51,8 @@
             android:label="@string/title_activity_show_produto_final" />
         <activity
             android:name=".caixa.registro.venda_produto.ShowRegistroVendaProdutoActivity"
-            android:label="@string/title_activity_show_registro_venda_produto"></activity>
+            android:label="@string/title_activity_show_registro_venda_produto" />
+        <activity android:name=".SelecionarMatPrimaActivity"></activity>
     </application>
 
 </manifest>

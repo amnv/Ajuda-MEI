@@ -33,4 +33,13 @@ public class TipoEstoqueActivity extends Activity {
         });
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(TipoEstoqueActivity.this, MainActivity.class));
+        finish();
+
+    }
+
 }

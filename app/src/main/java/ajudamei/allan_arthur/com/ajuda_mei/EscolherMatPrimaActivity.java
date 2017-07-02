@@ -60,4 +60,13 @@ public class EscolherMatPrimaActivity extends Activity {
             itens.setAdapter(adapter);
         }
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(EscolherMatPrimaActivity.this, TipoEstoqueActivity.class));
+        finish();
+
+    }
 }
