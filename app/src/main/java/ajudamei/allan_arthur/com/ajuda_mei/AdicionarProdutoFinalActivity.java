@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +11,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AdicionarProdutoFinalActivity extends Activity {
+    private DatabaseMateriaPrima db;
     private DatabaseProdutoFinal db2;
+    private UsoGeral g;
     private static final int CAMERA_REQUEST = 1;
     private static final int PICK_FROM_GALLERY = 2;
 
@@ -32,23 +36,60 @@ public class AdicionarProdutoFinalActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adicionar_produto_final);
-
+        db = new DatabaseMateriaPrima(this);
         db2 = new DatabaseProdutoFinal(this);
-        confirmarAdd = (Button) findViewById(R.id.bt_adicionar_mat_prima_ao_estoque);
+        confirmarAdd = (Button) findViewById(R.id.bt_calcular_nova_margem);
         tirarFoto = (Button) findViewById(R.id.bt_tirar_foto);
         escolherFoto = (Button) findViewById(R.id.bt_escolher_foto);
-        nome = (EditText) findViewById(R.id.editTextNome);
-        quantidade = (EditText) findViewById(R.id.editTextQuantidade);
-        preco = (EditText) findViewById(R.id.editTextPreco);
-        tamanho = (EditText) findViewById(R.id.editTextTamanho);
+        nome = (EditText) findViewById(R.id.txt_nome);
+        quantidade = (EditText) findViewById(R.id.txt_qtd);
+        preco = (EditText) findViewById(R.id.txt_margem_atual);
+        tamanho = (EditText) findViewById(R.id.txt_tam);
         img = (ImageView) findViewById(R.id.img_view_foto);
         goToMatPrima = (Button) findViewById(R.id.bt_escolher_mat_prima);
+
+        g = (UsoGeral) getApplication();
+
+        if(!g.getTemp().equals(null)){
+            ItemProdutoFinal temp = g.getTemp();
+            nome.setText(temp.getNome());
+            tamanho.setText(temp.getTamanho());
+            quantidade.setText(String.valueOf(temp.getQuantidade()));
+            preco.setText(String.valueOf(temp.getPreco()));
+        }
 
 
         goToMatPrima.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdicionarProdutoFinalActivity.this, EscolherMatPrimaActivity.class);
+                g = (UsoGeral) getApplication();
+                String aux1 = nome.getText().toString();
+                String aux3 = quantidade.getText().toString();
+                String aux2 = tamanho.getText().toString();
+                String aux4 = preco.getText().toString();
+
+                if(!aux1.equals("") || !aux2.equals("")|| !aux3.equals("")||!aux4.equals("")){
+                    String retNome = "";
+                    if(!aux1.equals("")){
+                        retNome = aux1;
+                    }
+                    String retTam = "";
+                    if(!aux2.equals("")){
+                        retTam = aux2;
+                    }
+                    double retQtd = 0;
+                    if(!aux3.equals("")){
+                        retQtd = Double.parseDouble(aux3);
+                    }
+                    double retPreco = 0;
+                    if(!aux4.equals("")){
+                        retPreco = Double.parseDouble(aux4);
+                    }
+
+                    g.setTemp(new ItemProdutoFinal(retNome, retTam, retQtd, retPreco, null, "", 0));
+
+                }
+                Intent intent = new Intent(AdicionarProdutoFinalActivity.this, SelecionarMatPrimaActivity.class);
                 startActivity(intent);
 
             }
@@ -56,12 +97,21 @@ public class AdicionarProdutoFinalActivity extends Activity {
         confirmarAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                g = (UsoGeral) getApplication();
+                List<ItemMateriaPrima> t1 = g.getItensParaDecrementar();
+                List<Integer> t2 = g.getQuantidadesParaDecrementar();
+                double custoProducao = 0;
+                for(int i = 0; i < t1.size(); i++){
+                    custoProducao += t2.get(i) * t1.get(i).getPreco();
+                    db.modify(t1.get(i), t2.get(i));
+                }
                 BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
                 Bitmap bitmap = drawable.getBitmap();
+                ItemProdutoFinal aux = new ItemProdutoFinal(nome.getText().toString() ,tamanho.getText().toString(), Double.parseDouble(quantidade.getText().toString()), Double.parseDouble(preco.getText().toString()),bitmap, null, custoProducao);
 
-                ItemProdutoFinal aux = new ItemProdutoFinal(nome.getText().toString() ,tamanho.getText().toString(), Double.parseDouble(quantidade.getText().toString()), Double.parseDouble(preco.getText().toString()),bitmap, null);
-
-                db2.insert(aux);
+                db2.insert(aux, custoProducao);
+                g.setItensParaDecrementar(new ArrayList<ItemMateriaPrima>());
+                g.setQuantidadesParaDecrementar(new ArrayList<Integer>());
                 Intent intent = new Intent(AdicionarProdutoFinalActivity.this, EscolherProdutoFinalActivity.class);
                 Toast.makeText(getApplicationContext(), "Item adicionado!", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
@@ -126,11 +176,6 @@ public class AdicionarProdutoFinalActivity extends Activity {
     public void callCamera() {
         Intent cameraIntent = new Intent(
                 android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        //cameraIntent.putExtra("crop", "true");
-        //cameraIntent.putExtra("aspectX", 0);
-        //cameraIntent.putExtra("aspectY", 0);
-        //cameraIntent.putExtra("outputX", 200);
-        //cameraIntent.putExtra("outputY", 150);
         startActivityForResult(cameraIntent, CAMERA_REQUEST);
 
     }

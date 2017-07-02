@@ -37,7 +37,8 @@ public class MainActivity extends Activity {
         bt3.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,CalcularPrecoVendaEscolherActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -59,6 +60,17 @@ public class MainActivity extends Activity {
             }
         });
 
+
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
 
     }
 }

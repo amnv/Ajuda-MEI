@@ -7,9 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.provider.ContactsContract;
 
 import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,6 +30,7 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
     final static String ITEM_PRECO = "preço";
     final static String ITEM_DATA = "dataAdicao";
     final static String ITEM_FOTO = "foto";
+    final static String ITEM_CUSTO_PROD = "custoProducao";
 
     final private static String CREATE_CMD =
 
@@ -36,8 +40,9 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
                     + ITEM_TAMANHO + " TEXT NOT NULL, "
                     + ITEM_QUANTIDADE + " TEXT NOT NULL, "
                     + ITEM_PRECO + " TEXT NOT NULL, "
-                    + ITEM_FOTO + " BLOB "
-//                    + ITEM_DATA + " TEXT NOT NULL"
+                    + ITEM_FOTO + " BLOB, "
+                    + ITEM_DATA + " TEXT NOT NULL, "
+                    + ITEM_CUSTO_PROD + " TEXT NOT NULL"
                     + ")";
 
     final private static String NAME = "produto_db";
@@ -60,8 +65,11 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
 
     }
 
-    public void insert(ItemProdutoFinal item) {
+    public void insert(ItemProdutoFinal item, double custoProducao) {
         SQLiteDatabase db = this.getWritableDatabase();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+
         ContentValues values = new ContentValues();
 
         values.put(DatabaseProdutoFinal.ITEM_NOME, item.getNome());
@@ -69,6 +77,8 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
         values.put(DatabaseProdutoFinal.ITEM_QUANTIDADE, item.getQuantidade());
         values.put(DatabaseProdutoFinal.ITEM_PRECO, item.getPreco());
         values.put(DatabaseProdutoFinal.ITEM_FOTO, getBytes(item.getFoto()));
+        values.put(DatabaseProdutoFinal.ITEM_DATA, dateFormat.format(date));
+        values.put(DatabaseProdutoFinal.ITEM_CUSTO_PROD, custoProducao);
 
         db.insertWithOnConflict(TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
         db.close();
@@ -85,6 +95,26 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
 
         db.update(DatabaseProdutoFinal.TABLE_NAME, values, DatabaseProdutoFinal.ITEM_NOME + "=" + item.getNome(), null);
         db.close();
+    }
+
+    public void modifyPreco(ItemProdutoFinal item, double preco){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + _ID +" FROM "
+                + TABLE_NAME + " WHERE " + ITEM_NOME + "= '" + item.getNome()+ "'";
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                ContentValues values = new ContentValues();
+                values.put(DatabaseMateriaPrima.ITEM_PRECO,preco);
+
+                db.update(TABLE_NAME, values, "_id= "+ cursor.getInt(0), null);
+
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
     }
 
     public void delete (ItemProdutoFinal item)  {
@@ -104,7 +134,8 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do{
                 ItemProdutoFinal temp = new ItemProdutoFinal(cursor.getString(1),cursor.getString(2), Double.parseDouble(cursor.getString(3)),
-                        Double.parseDouble(cursor.getString(4)), getImage(cursor.getBlob(5)), null);
+                        Double.parseDouble(cursor.getString(4)), getImage(cursor.getBlob(5)),
+                        cursor.getString(6), Double.parseDouble(cursor.getString(7)));
                 aux.add(temp);
 
             } while (cursor.moveToNext());

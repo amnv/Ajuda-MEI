@@ -62,4 +62,15 @@ public class ShowMatPrimaActivity extends Activity {
             registro.setAdapter(adapter);
         }
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        g = (UsoGeral) getApplication();
+        g.setItem(null);
+        startActivity(new Intent(ShowMatPrimaActivity.this, EscolherMatPrimaActivity.class));
+        finish();
+
+    }
 }
