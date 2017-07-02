@@ -52,7 +52,12 @@
         <activity
             android:name=".caixa.registro.venda_produto.ShowRegistroVendaProdutoActivity"
             android:label="@string/title_activity_show_registro_venda_produto" />
-        <activity android:name=".SelecionarMatPrimaActivity"></activity>
+        <activity android:name=".SelecionarMatPrimaActivity" />
+        <activity android:name=".CalcularPrecoVendaMainActivity" />
+        <activity android:name=".CalcularPrecoVendaListaActivity" />
+        <activity android:name=".CalculoPrecoUmActivity" />
+        <activity android:name=".CalcularPrecoVendaEscolherActivity" />
+        <activity android:name=".CalcularPrecoVendaDoisActivity"></activity>
     </application>
 
 </manifest>

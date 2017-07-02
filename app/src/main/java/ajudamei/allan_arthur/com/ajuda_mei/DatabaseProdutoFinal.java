@@ -97,6 +97,26 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void modifyPreco(ItemProdutoFinal item, double preco){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + _ID +" FROM "
+                + TABLE_NAME + " WHERE " + ITEM_NOME + "= '" + item.getNome()+ "'";
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                ContentValues values = new ContentValues();
+                values.put(DatabaseMateriaPrima.ITEM_PRECO,preco);
+
+                db.update(TABLE_NAME, values, "_id= "+ cursor.getInt(0), null);
+
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+    }
+
     public void delete (ItemProdutoFinal item)  {
         SQLiteDatabase database = this.getWritableDatabase();
         database.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + ITEM_NOME + "= '" + item.getNome() + "'");

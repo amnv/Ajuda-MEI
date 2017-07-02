@@ -45,12 +45,12 @@ public class AdicionarMatPrimaActivity extends Activity {
 
         db = new DatabaseMateriaPrima(this);
 
-        confirmarAdd = (Button) findViewById(R.id.bt_adicionar_mat_prima_ao_estoque);
+        confirmarAdd = (Button) findViewById(R.id.bt_calcular_nova_margem);
         tirarFoto = (Button) findViewById(R.id.bt_tirar_foto);
         escolherFoto = (Button) findViewById(R.id.bt_escolher_foto);
         nome = (EditText) findViewById(R.id.txt_nome);
         quantidade = (EditText) findViewById(R.id.txt_qtd);
-        preco = (EditText) findViewById(R.id.txt_preco);
+        preco = (EditText) findViewById(R.id.txt_margem_atual);
         tamanho = (EditText) findViewById(R.id.txt_tam);
         img = (ImageView) findViewById(R.id.img_view_foto);
 

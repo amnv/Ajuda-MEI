@@ -1,0 +1,60 @@
+package ajudamei.allan_arthur.com.ajuda_mei;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.List;
+
+public class CalcularPrecoVendaEscolherActivity extends Activity {
+
+    private DatabaseProdutoFinal db;
+    private ListView itens;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_calcular_preco_venda_escolher);
+
+        db = new DatabaseProdutoFinal(this);
+
+        itens = (ListView) findViewById(R.id.lista_mat_prima);
+
+        itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ItemProdutoFinal item = (ItemProdutoFinal) parent.getItemAtPosition(position);
+                UsoGeral g = (UsoGeral) getApplication();
+                g.setTemp(item);
+                Intent intent = new Intent(CalcularPrecoVendaEscolherActivity.this, CalcularPrecoVendaMainActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        List<ItemProdutoFinal> temp = db.getAllItens();
+        //Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
+        AdapterProduto adapter = new AdapterProduto(CalcularPrecoVendaEscolherActivity.this, R.layout.itemlista, temp);
+
+        if (temp != null) {
+            itens.setAdapter(adapter);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(CalcularPrecoVendaEscolherActivity.this, MainActivity.class));
+        finish();
+
+    }
+}
