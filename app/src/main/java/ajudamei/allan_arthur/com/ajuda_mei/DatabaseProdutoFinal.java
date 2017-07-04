@@ -22,6 +22,7 @@ import java.util.List;
 public class DatabaseProdutoFinal extends SQLiteOpenHelper {
 
     final static String TABLE_NAME = "produtos_finais";
+    final static String TABLE2_NAME = "registro";
     final static String _ID = "_id";
 
     final static String ITEM_NOME = "name";
@@ -31,6 +32,12 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
     final static String ITEM_DATA = "dataAdicao";
     final static String ITEM_FOTO = "foto";
     final static String ITEM_CUSTO_PROD = "custoProducao";
+
+    final static String _ID2 = "_id2";
+    final static String REG_PROD_FINAL = "prodFinal";
+    final static String REG_DATA = "dataRegistro";
+    final static String REG_SALDO = "saldo";
+    final static String REG_TIPO = "tipo";
 
     final private static String CREATE_CMD =
 
@@ -44,6 +51,15 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
                     + ITEM_DATA + " TEXT NOT NULL, "
                     + ITEM_CUSTO_PROD + " TEXT NOT NULL"
                     + ")";
+    final private static String CREATE2_CMD =
+
+            "CREATE TABLE " + TABLE2_NAME + " (" + _ID2
+                    + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                    + REG_PROD_FINAL + " TEXT NOT NULL, "
+                    + REG_DATA + " TEXT NOT NULL, "
+                    + REG_SALDO + " TEXT NOT NULL, "
+//                    + REG_TIPO + " TEXT NOT NULL, "
+                    + " FOREIGN KEY(prodFinal) REFERENCES materiaprima(name))";
 
     final private static String NAME = "produto_db";
     final private static Integer VERSION = 1;
@@ -57,6 +73,7 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_CMD);
+        db.execSQL(CREATE2_CMD);
     }
 
 
@@ -81,7 +98,19 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
         values.put(DatabaseProdutoFinal.ITEM_CUSTO_PROD, custoProducao);
 
         db.insertWithOnConflict(TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
+        insert(item.getNome(), dateFormat.format(date), (int)item.getQuantidade(), "adicao");
         db.close();
+    }
+
+    public void insert(String nome, String data, int modificacao, String tipo){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DatabaseProdutoFinal.REG_DATA, data);
+        values.put(DatabaseProdutoFinal.REG_PROD_FINAL, nome);
+        values.put(DatabaseProdutoFinal.REG_SALDO, modificacao);
+        //values.put(DatabaseProdutoFinal.REG_TIPO, tipo);
+
+        db.insertWithOnConflict(TABLE2_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
     }
 
     public void update(ItemProdutoFinal item) {
@@ -115,6 +144,10 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         cursor.close();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        insert(item.getNome(), dateFormat.format(date), -(quantidade), "retirada");
+
     }
 
     public void modifyPreco(ItemProdutoFinal item, double preco){
@@ -135,6 +168,28 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         cursor.close();
+    }
+
+    public List<Registro> getAllRegistros(ItemProdutoFinal item){
+        List<Registro> aux = new ArrayList<Registro>();
+
+        String query = "SELECT " + REG_DATA +" , " + REG_SALDO + " FROM "
+                + TABLE2_NAME + " WHERE " + REG_PROD_FINAL + "= '" + item.getNome()+ "'";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                Registro temp = new Registro(cursor.getString(0), Integer.parseInt(cursor.getString(1)),
+                        "add");
+                aux.add(temp);
+            } while (cursor.moveToNext());
+
+        }
+        cursor.close();
+
+        return aux;
     }
 
     public void delete (ItemProdutoFinal item)  {
