@@ -52,10 +52,11 @@ public class ListaClientesActivity extends Activity {
         getGroupID_Cursor.close();
 
         List<Cliente> temp = getContatos(Integer.parseInt(groupID));
-        AdapterCliente adapter = new AdapterCliente(ListaClientesActivity.this, R.layout.dataregistro, temp);
+        AdapterCliente adapter = new AdapterCliente(ListaClientesActivity.this, R.layout.itemlista, temp);
 
         if(temp != null) {
             itens.setAdapter(adapter);
+            Toast.makeText(this,"Quantidade "+temp.size(),Toast.LENGTH_SHORT).show();
         }
     }
 
