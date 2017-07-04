@@ -32,13 +32,13 @@ public class AdapterProduto extends ArrayAdapter<ItemProdutoFinal> {
         ImageView img = (ImageView) convertView.findViewById(R.id.imagem);
         img.setImageBitmap(temp.getFoto());
         TextView nome = (TextView) convertView.findViewById(R.id.nome);
-        nome.setText(temp.getNome());
+        nome.setText("Nome: " + temp.getNome());
         TextView tamanho = (TextView) convertView.findViewById(R.id.tamanho);
-        tamanho.setText(temp.getTamanho());
+        tamanho.setText("Tamanho: " + temp.getTamanho());
         TextView preco = (TextView) convertView.findViewById(R.id.preco_und);
-        preco.setText(String.valueOf(temp.getPreco()));
+        preco.setText("Preço: R$ " + String.valueOf(temp.getPreco()));
         TextView qnt = (TextView) convertView.findViewById(R.id.quantidade);
-        qnt.setText(String.valueOf(temp.getQuantidade()));
+        qnt.setText("Qtd: " + String.valueOf(temp.getQuantidade()));
 
         return convertView;
     }

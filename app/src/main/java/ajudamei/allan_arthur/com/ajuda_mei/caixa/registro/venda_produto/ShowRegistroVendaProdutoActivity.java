@@ -48,9 +48,7 @@ public class ShowRegistroVendaProdutoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 ItemProdutoFinal item = ug.getProduto();
-                double qnt = item.getQuantidade()  -1;
-                item.setQuantidade(qnt);
-                db.update(item);
+                db.modify(item, 1);
             }
         });
     }

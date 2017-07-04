@@ -97,6 +97,26 @@ public class DatabaseProdutoFinal extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void modify(ItemProdutoFinal item, int quantidade){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + _ID +" FROM "
+                + TABLE_NAME + " WHERE " + ITEM_NOME + "= '" + item.getNome()+ "'";
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                ContentValues values = new ContentValues();
+                values.put(DatabaseMateriaPrima.ITEM_QUANTIDADE, item.getQuantidade() - quantidade);
+
+                db.update(TABLE_NAME, values, "_id= "+ cursor.getInt(0), null);
+
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+    }
+
     public void modifyPreco(ItemProdutoFinal item, double preco){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT " + _ID +" FROM "
