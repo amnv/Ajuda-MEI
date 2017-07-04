@@ -49,9 +49,9 @@ public class AdicionarMatPrimaActivity extends Activity {
         tirarFoto = (Button) findViewById(R.id.bt_tirar_foto);
         escolherFoto = (Button) findViewById(R.id.bt_escolher_foto);
         nome = (EditText) findViewById(R.id.txt_nome);
-        quantidade = (EditText) findViewById(R.id.txt_qtd);
+        quantidade = (EditText) findViewById(R.id.txt_telefone);
         preco = (EditText) findViewById(R.id.txt_margem_atual);
-        tamanho = (EditText) findViewById(R.id.txt_tam);
+        tamanho = (EditText) findViewById(R.id.txt_email);
         img = (ImageView) findViewById(R.id.img_view_foto);
 
         confirmarAdd.setOnClickListener(new View.OnClickListener() {
