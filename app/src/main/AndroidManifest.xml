@@ -61,7 +61,8 @@
         <activity android:name=".CalcularPrecoVendaEscolherActivity" />
         <activity android:name=".CalcularPrecoVendaDoisActivity" />
         <activity android:name=".ListaClientesActivity" />
-        <activity android:name=".ListaFuncionariosActivity"></activity>
+        <activity android:name=".ListaFuncionariosActivity" />
+        <activity android:name=".caixa.registro.boleto.AdicionarBoletoActivity" />
     </application>
 
 </manifest>
