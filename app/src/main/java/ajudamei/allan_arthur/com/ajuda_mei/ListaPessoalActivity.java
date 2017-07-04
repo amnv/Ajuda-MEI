@@ -20,7 +20,8 @@ public class ListaPessoalActivity extends Activity {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ListaPessoalActivity.this, ListaClientesActivity.class);
+                startActivity(intent);
             }
         });
 

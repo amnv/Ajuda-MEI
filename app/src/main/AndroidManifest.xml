@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <application
         android:name=".UsoGeral"
@@ -57,7 +59,9 @@
         <activity android:name=".CalcularPrecoVendaListaActivity" />
         <activity android:name=".CalculoPrecoUmActivity" />
         <activity android:name=".CalcularPrecoVendaEscolherActivity" />
-        <activity android:name=".CalcularPrecoVendaDoisActivity"></activity>
+        <activity android:name=".CalcularPrecoVendaDoisActivity" />
+        <activity android:name=".ListaClientesActivity" />
+        <activity android:name=".ListaFuncionariosActivity"></activity>
     </application>
 
 </manifest>

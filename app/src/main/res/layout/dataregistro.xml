@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt_qtd"
+        android:id="@+id/txt_telefone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
