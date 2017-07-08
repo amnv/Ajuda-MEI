@@ -54,7 +54,7 @@ public class DatabaseRegistroVenda extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(DatabaseRegistroVenda.ITEM_DESCRICAO, item.getNome());
+        values.put(DatabaseRegistroVenda.ITEM_DESCRICAO, item.getDescricao());
         values.put(DatabaseRegistroVenda.ITEM_PRECO, item.getPreco());
         values.put(DatabaseRegistroVenda.ITEM_DATA, item.getData());
 
@@ -72,7 +72,7 @@ public class DatabaseRegistroVenda extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                Venda temp = new Venda(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3));
+                Venda temp = new Venda(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3), 999, "tipo");
                 aux.add(temp);
 
             } while (cursor.moveToNext());

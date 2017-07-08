@@ -3,8 +3,6 @@ package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.venda_produto;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -12,15 +10,10 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.AdapterMateria;
 import ajudamei.allan_arthur.com.ajuda_mei.AdapterProduto;
-import ajudamei.allan_arthur.com.ajuda_mei.DatabaseMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
-import ajudamei.allan_arthur.com.ajuda_mei.ItemMateriaPrima;
-import ajudamei.allan_arthur.com.ajuda_mei.ItemProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.ShowMatPrimaActivity;
-import ajudamei.allan_arthur.com.ajuda_mei.ShowProdutoFinalActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 
 public class VendaProdutoActivity extends Activity {

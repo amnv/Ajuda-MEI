@@ -3,14 +3,13 @@ package ajudamei.allan_arthur.com.ajuda_mei;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.List;
+
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
 
 public class CalcularPrecoVendaEscolherActivity extends Activity {
 

@@ -10,6 +10,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
+import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
+
 public class ShowProdutoFinalActivity extends Activity {
     private ListView registro;
     private ImageView imagem;
@@ -22,7 +26,7 @@ public class ShowProdutoFinalActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_produto_final);
         ug = (UsoGeral) getApplication();
-//        registro = (ListView) findViewById(R.id.extrato_produto_final);
+        registro = (ListView) findViewById(R.id.extrato_produto_final);
         imagem = (ImageView) findViewById(R.id.img_produto_final);
         nome = (TextView) findViewById(R.id.txt_nome_prod);
 
@@ -53,11 +57,11 @@ public class ShowProdutoFinalActivity extends Activity {
         ug = (UsoGeral) getApplication();
 
 
-//        List<Registro> temp = db.getAllRegistros(g.getProduto());
-//        AdapterRegistro adapter = new AdapterRegistro(ShowProdutoFinalActivity.this, R.layout.itemlista, temp);
-//        if(temp != null) {
-//            registro.setAdapter(adapter);
-//        }
+        List<Registro> temp = db.getAllRegistros(ug.getProduto());
+        AdapterRegistro adapter = new AdapterRegistro(ShowProdutoFinalActivity.this, R.layout.itemlista, temp);
+        if(temp != null) {
+            registro.setAdapter(adapter);
+        }
     }
 
 }

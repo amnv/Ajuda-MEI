@@ -14,6 +14,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
+
 public class AdicionarProdutoFinalActivity extends Activity {
     private DatabaseMateriaPrima db;
     private DatabaseProdutoFinal db2;

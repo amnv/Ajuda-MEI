@@ -11,4 +11,5 @@
     <string name="title_activity_show_produto_final">ShowProdutoFinalActivity</string>
     <string name="title_activity_show_registro_venda_produto">ShowRegistroVendaProdutoActivity
     </string>
+    <string name="title_activity_selecionar_produto_final">SelecionarProdutoFinalActivity</string>
 </resources>

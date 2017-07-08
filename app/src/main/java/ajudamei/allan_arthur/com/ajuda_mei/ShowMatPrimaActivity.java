@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
+
 public class ShowMatPrimaActivity extends Activity {
     private ListView registro;
     private ImageView imagem;

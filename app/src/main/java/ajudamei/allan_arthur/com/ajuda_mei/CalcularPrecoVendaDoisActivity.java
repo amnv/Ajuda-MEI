@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
+
 public class CalcularPrecoVendaDoisActivity extends Activity {
 
     private DatabaseProdutoFinal db;

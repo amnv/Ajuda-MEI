@@ -5,6 +5,9 @@ import android.app.Application;
 import java.util.ArrayList;
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
+
 /**
  * Created by arthur on 26/06/17.
  */

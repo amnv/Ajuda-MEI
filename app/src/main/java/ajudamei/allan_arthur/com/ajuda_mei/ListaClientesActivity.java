@@ -8,13 +8,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ajudamei.allan_arthur.com.ajuda_mei.domain.Cliente;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 
 public class ListaClientesActivity extends Activity {
     private ListView itens;
@@ -52,6 +54,7 @@ public class ListaClientesActivity extends Activity {
         getGroupID_Cursor.close();
 
         List<Cliente> temp = getContatos(Integer.parseInt(groupID));
+
         AdapterCliente adapter = new AdapterCliente(ListaClientesActivity.this, R.layout.itemlista, temp);
 
         if(temp != null) {

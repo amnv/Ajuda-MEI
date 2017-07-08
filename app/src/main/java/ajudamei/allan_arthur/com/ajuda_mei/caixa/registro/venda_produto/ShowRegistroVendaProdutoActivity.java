@@ -1,30 +1,33 @@
 package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.venda_produto;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.EscolherProdutoFinalActivity;
-import ajudamei.allan_arthur.com.ajuda_mei.ItemProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.ShowProdutoFinalActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 
-public class ShowRegistroVendaProdutoActivity extends Activity {
+public class ShowRegistroVendaProdutoActivity extends Activity implements NumberPicker.OnValueChangeListener {
     private ListView registro;
     private ImageView imagem;
     private TextView nome;
     private TextView quantidade;
     private UsoGeral ug;
+    private boolean adicionou = false;
     private DatabaseProdutoFinal db;
     private Button bt_decrementaQnt;
 
@@ -48,11 +51,46 @@ public class ShowRegistroVendaProdutoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 ItemProdutoFinal item = ug.getProduto();
-                double qnt = item.getQuantidade()  -1;
-                item.setQuantidade(qnt);
-                db.update(item);
+                show(item);
+                db.modify(item, 1);
             }
         });
+    }
+
+    public void show(ItemProdutoFinal item) {
+
+        final Dialog d = new Dialog(ShowRegistroVendaProdutoActivity.this);
+        d.setTitle("Escolha a quantidade");
+        d.setContentView(R.layout.dialog);
+        Button b1 = (Button) d.findViewById(R.id.button1);
+        Button b2 = (Button) d.findViewById(R.id.button2);
+        final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
+        np.setMaxValue((int)item.getQuantidade());
+        np.setMinValue(0);
+        np.setWrapSelectorWheel(false);
+        np.setOnValueChangedListener(this);
+        b1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                d.dismiss();
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Qnt de itens escolhidos: "
+                        + String.valueOf(np.getValue()), Toast.LENGTH_SHORT).show();
+                ug = (UsoGeral) getApplication();
+                List<Integer> aux = ug.getQuantidadesParaDecrementar();
+                aux.add(np.getValue());
+                ug.setQuantidadesParaDecrementar(aux);
+                adicionou = true;
+                d.dismiss(); // dismiss the dialog
+            }
+        });
+        d.show();
     }
 
     @Override
@@ -74,5 +112,10 @@ public class ShowRegistroVendaProdutoActivity extends Activity {
 //        if(temp != null) {
 //            registro.setAdapter(adapter);
 //        }
+    }
+
+    @Override
+    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+
     }
 }

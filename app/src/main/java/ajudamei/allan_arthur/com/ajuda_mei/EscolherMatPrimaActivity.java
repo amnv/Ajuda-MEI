@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
+
 public class EscolherMatPrimaActivity extends Activity {
     private DatabaseMateriaPrima db;
     private ListView itens;

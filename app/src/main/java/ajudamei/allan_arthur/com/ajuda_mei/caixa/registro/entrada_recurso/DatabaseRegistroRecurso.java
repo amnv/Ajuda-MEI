@@ -54,7 +54,7 @@ public class DatabaseRegistroRecurso extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(DatabaseRegistroRecurso.ITEM_DESCRICAO, item.getNome());
+        values.put(DatabaseRegistroRecurso.ITEM_DESCRICAO, item.getDescricao());
         values.put(DatabaseRegistroRecurso.ITEM_PRECO, item.getPreco());
         values.put(DatabaseRegistroRecurso.ITEM_DATA, item.getData());
 
@@ -72,7 +72,7 @@ public class DatabaseRegistroRecurso extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                Entrada temp = new Entrada(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3));
+                Entrada temp = new Entrada(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3), 999, "tipo");
                 aux.add(temp);
 
             } while (cursor.moveToNext());

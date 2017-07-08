@@ -54,7 +54,7 @@ public class DatabaseRegistroBoleto extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(DatabaseRegistroBoleto.ITEM_DESCRICAO, item.getNome());
+        values.put(DatabaseRegistroBoleto.ITEM_DESCRICAO, item.getDescricao());
         values.put(DatabaseRegistroBoleto.ITEM_PRECO, item.getPreco());
         values.put(DatabaseRegistroBoleto.ITEM_DATA, item.getData());
 
@@ -72,7 +72,7 @@ public class DatabaseRegistroBoleto extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                Boleto temp = new Boleto(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3));
+                Boleto temp = new Boleto(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3), 999, "tipo");
                 aux.add(temp);
 
             } while (cursor.moveToNext());
