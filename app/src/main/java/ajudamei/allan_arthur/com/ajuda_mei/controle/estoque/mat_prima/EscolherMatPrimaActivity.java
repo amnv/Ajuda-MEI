@@ -48,7 +48,7 @@ public class EscolherMatPrimaActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        MenuItem trocar = menu.add(0,0,0,"Adicionar Produto");
+        MenuItem trocar = menu.add(0,0,0,"Adicionar");
         trocar.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return super.onCreateOptionsMenu(menu);
     }

@@ -29,7 +29,8 @@ public class CalcularPrecoVendaEscolherActivity extends Activity {
         db = new DatabaseProdutoFinal(this);
 
         itens = (ListView) findViewById(R.id.lista_mat_prima);
-
+        View empty = findViewById(R.id.empty_calcular_preco_venda_escolher);
+        itens.setEmptyView(empty);
         itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

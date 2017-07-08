@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:textSize="20dp"
-            android:text="Não tem clientes"/>
+            android:text="Não há clientes"/>
 
         <ListView
             android:id="@+id/lista_clientes"

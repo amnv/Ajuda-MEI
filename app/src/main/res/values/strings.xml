@@ -1,15 +1,51 @@
 <resources>
     <string name="app_name">Ajuda-MEI</string>
-    <string name="title_activity_pagamento_boleto">PagamentoBoletoActivity</string>
-    <string name="title_activity_venda_produto">VendaProdutoActivity</string>
-    <string name="title_activity_entrada_recursos">EntradaRecursosActivity</string>
-    <string name="title_activity_aquisicao_mat_prima">AquisicaoMatPrimaActivity</string>
-    <string name="title_activity_adicionar_boleto">AdicionarBoleto</string>
-    <string name="title_activity_adicionar_venda">AdicionarVendaActivity</string>
-    <string name="title_activity_adicionar_aquisicao">AdicionarAquisicaoActivity</string>
-    <string name="title_activity_adicionar_entrada_recurso">AdicionarEntradaRecursoActivity</string>
-    <string name="title_activity_show_produto_final">ShowProdutoFinalActivity</string>
-    <string name="title_activity_show_registro_venda_produto">ShowRegistroVendaProdutoActivity
-    </string>
-    <string name="title_activity_selecionar_produto_final">SelecionarProdutoFinalActivity</string>
+    <string name="title_activity_venda_produto">Registro de venda de produtos</string>
+    <string name="title_activity_entrada_recursos">Entrada de recursos</string>
+    <string name="title_activity_aquisicao_mat_prima">Aquisicao de Materia Prima</string>
+
+    <string name="title_activity_adicionar_mat_prima">Adicionar materia-prima</string>
+    <string name="title_activity_adicionar_produto_final">Adicionar produto final</string>
+    <string name="title_activity_adicionar_registro_venda">Adicionar uma Venda</string>
+    <string name="title_activity_adicionar_registro_boleto">Adicionar um boleto</string>
+    <string name="title_activity_adicionar_registro_aquisicao">Adicionar aquisicao</string>
+    <string name="title_activity_adicionar_registro_entrada_recurso">Adicionar  entrada de recurso</string>
+    <string name="title_activity_adicionar_pessoal">Lista</string>
+
+    <string name="title_activity_caixa_da_empresa">Caixa da empresa</string>
+    <string name="title_activity_calcular_preco_venda_">Calcular preço</string>
+    <string name="title_activity_calcular_preco_venda_main">Calcular preço de venda</string>
+    <string name="title_activity_calcular_preco_venda_um">Calcular preço de venda</string>
+    <string name="title_activity_calcular_preco_venda_dois">Calcular preço de venda</string>
+    <string name="title_activity_calcular_preco_venda_escolher">Calcular preço de venda</string>
+    <string name="title_activity_calcular_preco_venda_lista">Calcular preço de venda</string>
+
+    <string name="title_activity_clientes_fornecedor"></string>
+
+    <string name="title_activity_escolher_mat_prima">Escolher materia-prima</string>
+    <string name="title_activity_escolher_produto_final">Escolher produto final</string>
+    <string name="title_activity_tipo_estoque">Escolha do estoque</string>
+    <string name="title_activity_estoque_materia_prima">Estoque de materia-prima</string>
+    <string name="title_activity_estoque_produtos_finais">Estoque de produto final</string>
+
+
+    <string name="title_activity_show_produto_final">Produto Final</string>
+    <string name="title_activity_show_mat_prima">Materia-prima</string>
+
+    <string name="title_activity_show_registro_venda_produto">Registro de venda de produto</string>
+
+    <string name="title_activity_selecionar_mat_prima">Selecionar materia-prima</string>
+
+    <string name="title_activity_empregados">Funcionarios</string>
+    <string name="title_activity_lista_pessoal">Controle pessoal</string>
+    <string name="title_activity_lista_funcionarios">Lista de funcionarios</string>
+    <string name="title_activity_lista_clientes">Lista de clientes</string>
+
+    <string name="title_activity_caixa_registro_boleto_convenio">Pagamentos me boleto</string>
+    <string name="title_activity_caixa_registro_boleto_convenio_adicionar">Adicionar boleto</string>
+    <string name="title_activity_caixa_registro_venda_produto">Venda de produtos</string>
+    <string name="title_activity_caixa_registro_entrada_recurso">Entrada de recursos</string>
+    <string name="title_activity_caixa_registro_aquisicao_mat_prima">Aquisições de materia-prima</string>
+
+    <string name="title_activity_controle_estoque_"></string>
 </resources>

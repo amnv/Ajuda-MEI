@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Descrição" />
+        android:hint="Descrição" />
     <TextView
         android:id="@+id/textViewEntradaRecursoPreco"
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Preço" />
+        android:hint="Preço" />
     <TextView
         android:id="@+id/textViewEntradaRecursoData"
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Data" />
+        android:hint="Data" />
 
     <Button
         android:id="@+id/bt_adicionar_entrada_recurso"
