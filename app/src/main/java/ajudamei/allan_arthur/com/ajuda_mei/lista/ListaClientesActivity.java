@@ -15,9 +15,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.AdapterCliente;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterCliente;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.ShowMatPrimaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.mat_prima.ShowMatPrimaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.Cliente;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;

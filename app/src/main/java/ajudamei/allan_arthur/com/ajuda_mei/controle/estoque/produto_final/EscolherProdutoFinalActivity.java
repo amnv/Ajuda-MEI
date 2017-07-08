@@ -12,10 +12,9 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.AdapterProduto;
-import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterProduto;
+import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.ShowProdutoFinalActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.TipoEstoqueActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;

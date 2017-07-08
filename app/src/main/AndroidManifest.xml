@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
-            android:name=".AtualizarMatPrimaService"
+            android:name=".controle.estoque.mat_prima.AtualizarMatPrimaService"
             android:enabled="true" />
 
         <activity android:name=".MainActivity">
@@ -45,16 +45,16 @@
         <activity
             android:name=".caixa.registro.aquisicao_mat_prima.AquisicaoMatPrimaActivity"
             android:label="@string/title_activity_aquisicao_mat_prima" />
-        <activity android:name=".ShowMatPrimaActivity" />
+        <activity android:name=".controle.estoque.mat_prima.ShowMatPrimaActivity" />
         <activity android:name=".controle.estoque.produto_final.AdicionarProdutoFinalActivity" />
         <activity android:name=".lista.AdicionarPessoalActivity" />
         <activity
-            android:name=".ShowProdutoFinalActivity"
+            android:name=".controle.estoque.produto_final.ShowProdutoFinalActivity"
             android:label="@string/title_activity_show_produto_final" />
         <activity
             android:name=".caixa.registro.venda_produto.ShowRegistroVendaProdutoActivity"
             android:label="@string/title_activity_show_registro_venda_produto" />
-        <activity android:name=".SelecionarMatPrimaActivity" />
+        <activity android:name=".controle.estoque.mat_prima.SelecionarMatPrimaActivity" />
         <activity android:name=".calculo.preco.venda.CalcularPrecoVendaMainActivity" />
         <activity android:name=".calculo.preco.venda.CalcularPrecoVendaListaActivity" />
         <activity android:name=".calculo.preco.venda.CalculoPrecoVendaUmActivity" />

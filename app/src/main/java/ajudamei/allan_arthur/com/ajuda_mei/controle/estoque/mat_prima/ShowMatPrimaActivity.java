@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.mat_prima;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +12,10 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.mat_prima.EscolherMatPrimaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterRegistro;
+import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
 
 public class ShowMatPrimaActivity extends Activity {

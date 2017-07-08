@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,15 +9,16 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
+import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.Cliente;
 
 /**
- * Created by arthur on 28/06/17.
+ * Created by arthur on 03/07/17.
  */
 
-public class AdapterRegistro extends ArrayAdapter<Registro> {
+public class AdapterCliente extends ArrayAdapter<Cliente> {
 
-    public AdapterRegistro(Context context, int resource, List<Registro> objects) {
+    public AdapterCliente(Context context, int resource, List<Cliente> objects) {
         super(context, resource, objects);
     }
 
@@ -29,12 +30,12 @@ public class AdapterRegistro extends ArrayAdapter<Registro> {
             convertView = inflater.inflate(R.layout.dataregistro, parent, false);
         }
 
-        Registro temp = getItem(position);
+        Cliente temp = getItem(position);
 
         TextView data = (TextView) convertView.findViewById(R.id.txt_data);
-        data.setText("Data: " + temp.getData());
+        data.setText("Nome: " + temp.getNome());
         TextView qnt = (TextView) convertView.findViewById(R.id.txt_telefone);
-        qnt.setText("Qtd: " + String.valueOf(temp.getQuantidade()));
+        qnt.setText("Telefone: " + temp.getTelefone());
 
         return convertView;
     }

@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import ajudamei.allan_arthur.com.ajuda_mei.DatabaseMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 
