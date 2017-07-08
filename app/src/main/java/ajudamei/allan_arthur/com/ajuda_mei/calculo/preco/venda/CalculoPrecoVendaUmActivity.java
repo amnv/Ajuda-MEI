@@ -5,10 +5,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +31,7 @@ public class CalculoPrecoVendaUmActivity extends Activity {
     private EditText custo;
     private EditText margem;
     private Button calcular;
+    private SeekBar barra;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +42,7 @@ public class CalculoPrecoVendaUmActivity extends Activity {
         custo = (EditText) findViewById(R.id.txt_margem_atual);
         margem = (EditText) findViewById(R.id.txt_novo_preco);
         calcular = (Button) findViewById(R.id.bt_calcular_nova_margem);
+        barra = (SeekBar) findViewById(R.id.seekBar);
 
         g = (UsoGeral) getApplication();
         ItemProdutoFinal item = g.getTemp();
@@ -45,6 +51,22 @@ public class CalculoPrecoVendaUmActivity extends Activity {
         img.setImageBitmap(item.getFoto());
         tvNome.setText(item.getNome());
         custo.setText(String.valueOf(item.getCustoProducao()));
+
+
+        barra.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressChanged = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+                progressChanged = progress;
+                margem.setText(String.valueOf(progress));
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
 
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
