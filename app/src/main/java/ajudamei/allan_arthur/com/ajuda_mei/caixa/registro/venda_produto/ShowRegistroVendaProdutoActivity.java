@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -18,9 +17,8 @@ import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.EscolherProdutoFinalActivity;
-import ajudamei.allan_arthur.com.ajuda_mei.ItemProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.ShowProdutoFinalActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 
 public class ShowRegistroVendaProdutoActivity extends Activity implements NumberPicker.OnValueChangeListener {

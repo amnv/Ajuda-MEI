@@ -31,7 +31,7 @@ public class AdicionarBoletoActivity extends Activity {
         adicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Boleto aux = new Boleto(descricao.getText().toString(), Double.parseDouble(preco.getText().toString()), data.getText().toString());
+                Boleto aux = new Boleto(descricao.getText().toString(), Double.parseDouble(preco.getText().toString()), data.getText().toString(), 999, "tipo");
 
                 db.insert(aux);
             }

@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
+
 public class AdicionarMatPrimaActivity extends Activity {
     private DatabaseMateriaPrima db;
 

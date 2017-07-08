@@ -54,7 +54,7 @@ public class DatabaseRegistroAquisicao extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(DatabaseRegistroAquisicao.ITEM_DESCRICAO, item.getNome());
+        values.put(DatabaseRegistroAquisicao.ITEM_DESCRICAO, item.getDescricao());
         values.put(DatabaseRegistroAquisicao.ITEM_PRECO, item.getPreco());
         values.put(DatabaseRegistroAquisicao.ITEM_DATA, item.getData());
 
@@ -72,7 +72,7 @@ public class DatabaseRegistroAquisicao extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                Aquisicao temp = new Aquisicao(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3));
+                Aquisicao temp = new Aquisicao(cursor.getString(1),Double.parseDouble(cursor.getString(2)), cursor.getString(3), 999, "tipo");
                 aux.add(temp);
 
             } while (cursor.moveToNext());

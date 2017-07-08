@@ -7,13 +7,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.provider.ContactsContract;
 
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
 
 /**
  * Created by Allan on 09/06/2017.

@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.domain;
 
 import android.graphics.Bitmap;
 

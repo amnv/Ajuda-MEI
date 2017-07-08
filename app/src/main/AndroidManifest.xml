@@ -63,6 +63,9 @@
         <activity android:name=".ListaClientesActivity" />
         <activity android:name=".ListaFuncionariosActivity" />
         <activity android:name=".caixa.registro.boleto.AdicionarBoletoActivity" />
+        <activity android:name=".caixa.registro.entrada_recurso.AdicionarEntradaRecursoActivity"/>
+        <activity android:name=".caixa.registro.aquisicao_mat_prima.AdicionarAquisicaoActivity"/>
+
     </application>
 
 </manifest>

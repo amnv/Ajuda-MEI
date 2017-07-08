@@ -1,16 +1,15 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.domain;
 
 /**
  * Created by arthur on 29/05/17.
  */
 
-public class Funcionario {
-
+public class Cliente {
     private String nome;
     private String email;
     private String telefone;
 
-    public Funcionario(String nome, String email, String telefone) {
+    public Cliente(String nome, String email, String telefone) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;

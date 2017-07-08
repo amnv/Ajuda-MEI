@@ -1,8 +1,6 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.domain;
 
 import android.graphics.Bitmap;
-
-import java.util.Date;
 
 /**
  * Created by arthur on 28/05/17.

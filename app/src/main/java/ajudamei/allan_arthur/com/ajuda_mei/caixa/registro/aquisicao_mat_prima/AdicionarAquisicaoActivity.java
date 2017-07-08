@@ -31,7 +31,7 @@ public class AdicionarAquisicaoActivity extends Activity {
         adicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Aquisicao aux = new Aquisicao(descricao.getText().toString(), Double.parseDouble(preco.getText().toString()), data.getText().toString());
+                Aquisicao aux = new Aquisicao(descricao.getText().toString(), Double.parseDouble(preco.getText().toString()), data.getText().toString(), 999, "tipo");
 
                 db.insert(aux);
             }

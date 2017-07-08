@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.domain;
 
 /**
  * Created by arthur on 03/07/17.

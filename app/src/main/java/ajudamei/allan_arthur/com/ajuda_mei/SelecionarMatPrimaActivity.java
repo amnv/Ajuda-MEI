@@ -1,13 +1,9 @@
 package ajudamei.allan_arthur.com.ajuda_mei;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,8 +11,9 @@ import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 
 public class SelecionarMatPrimaActivity extends Activity implements NumberPicker.OnValueChangeListener{
     private DatabaseMateriaPrima db;

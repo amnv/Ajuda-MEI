@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
+
 /**
  * Created by arthur on 28/06/17.
  */

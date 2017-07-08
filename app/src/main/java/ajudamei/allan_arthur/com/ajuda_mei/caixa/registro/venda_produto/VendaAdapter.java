@@ -10,8 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.Registro;
-import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.Boleto;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
 
 /**
  * Created by Allan on 22/06/2017.
@@ -31,10 +30,10 @@ public class VendaAdapter extends ArrayAdapter<Venda> {
             convertView = inflater.inflate(R.layout.registrolista, parent, false);
         }
 
-        Registro temp = getItem(position);
+        Venda temp = getItem(position);
 
         TextView descricao = (TextView) convertView.findViewById(R.id.registro_info);
-        descricao.setText(temp.getNome());
+        descricao.setText(temp.getDescricao());
         TextView preco = (TextView) convertView.findViewById(R.id.registro_preco);
         preco.setText(String.valueOf(temp.getPreco()));
         TextView data = (TextView) convertView.findViewById(R.id.registro_data);
