@@ -6,4 +6,28 @@
     android:layout_height="match_parent"
     tools:context="ajudamei.allan_arthur.com.ajuda_mei.lista.ListaFuncionariosActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/empty_lista_funcionarios"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="Não tem funcionarios"/>
+
+        <ListView
+            android:id="@+id/lista_clientes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

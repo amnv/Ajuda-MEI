@@ -32,7 +32,8 @@ public class EscolherMatPrimaActivity extends Activity {
         db = new DatabaseMateriaPrima(this);
 
         itens = (ListView) findViewById(R.id.lista_mat_prima);
-
+        View empty = findViewById(R.id.empty_mat_prima);
+        itens.setEmptyView(empty);
         itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

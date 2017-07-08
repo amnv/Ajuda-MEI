@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context="ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final.EscolherProdutoFinalActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/empty_produto_final"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Não tem produto final"/>
+
     <ListView
         android:id="@+id/lista_produto_final"
         android:layout_width="wrap_content"
@@ -15,5 +27,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

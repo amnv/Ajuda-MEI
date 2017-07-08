@@ -30,7 +30,8 @@ public class VendaProdutoActivity extends Activity {
         db = new DatabaseProdutoFinal(this);
 
         vendas = (ListView) findViewById(R.id.lista_registro_venda);
-
+        View empty = findViewById(R.id.empty_produto_final);
+        vendas.setEmptyView(empty);
         vendas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

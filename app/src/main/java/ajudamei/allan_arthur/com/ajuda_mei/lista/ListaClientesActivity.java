@@ -31,7 +31,8 @@ public class ListaClientesActivity extends Activity {
         setContentView(R.layout.activity_lista_clientes);
 
         itens = (ListView) findViewById(R.id.lista_clientes);
-
+        View empty = findViewById(R.id.empty_lista_clientes);
+        itens.setEmptyView(empty);
         itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

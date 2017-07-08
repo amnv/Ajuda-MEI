@@ -32,7 +32,8 @@ public class EscolherProdutoFinalActivity extends Activity {
         db = new DatabaseProdutoFinal(this);
 
         itens = (ListView) findViewById(R.id.lista_produto_final);
-
+        View empty = findViewById(R.id.empty_produto_final);
+        itens.setEmptyView(empty);
         itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
