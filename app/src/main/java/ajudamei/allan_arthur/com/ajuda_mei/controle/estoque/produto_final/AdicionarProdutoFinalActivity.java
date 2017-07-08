@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.DatabaseMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.SelecionarMatPrimaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
 

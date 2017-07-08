@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.lista;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import ajudamei.allan_arthur.com.ajuda_mei.R;
 
 public class ListaPessoalActivity extends Activity {
 

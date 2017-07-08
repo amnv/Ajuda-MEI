@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.mat_prima;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,12 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.AdapterMateria;
+import ajudamei.allan_arthur.com.ajuda_mei.DatabaseMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.ShowMatPrimaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
+import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.TipoEstoqueActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 
 public class EscolherMatPrimaActivity extends Activity {
@@ -26,7 +32,8 @@ public class EscolherMatPrimaActivity extends Activity {
         db = new DatabaseMateriaPrima(this);
 
         itens = (ListView) findViewById(R.id.lista_mat_prima);
-
+        View empty = findViewById(R.id.empty_mat_prima);
+        itens.setEmptyView(empty);
         itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

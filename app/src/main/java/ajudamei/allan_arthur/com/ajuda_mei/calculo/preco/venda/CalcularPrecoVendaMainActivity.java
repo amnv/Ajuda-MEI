@@ -1,10 +1,13 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.calculo.preco.venda;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.R;
 
 public class CalcularPrecoVendaMainActivity extends Activity {
 
@@ -17,7 +20,7 @@ public class CalcularPrecoVendaMainActivity extends Activity {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CalcularPrecoVendaMainActivity.this,CalculoPrecoUmActivity.class);
+                Intent intent = new Intent(CalcularPrecoVendaMainActivity.this,CalculoPrecoVendaUmActivity.class);
                 startActivity(intent);
             }
         });

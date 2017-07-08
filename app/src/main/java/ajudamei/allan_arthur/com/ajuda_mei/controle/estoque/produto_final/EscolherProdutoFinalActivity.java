@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,12 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.AdapterProduto;
+import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.ShowProdutoFinalActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
+import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.TipoEstoqueActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
 
 public class EscolherProdutoFinalActivity extends Activity {
@@ -26,7 +32,8 @@ public class EscolherProdutoFinalActivity extends Activity {
         db = new DatabaseProdutoFinal(this);
 
         itens = (ListView) findViewById(R.id.lista_produto_final);
-
+        View empty = findViewById(R.id.empty_produto_final);
+        itens.setEmptyView(empty);
         itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

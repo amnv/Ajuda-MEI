@@ -41,7 +41,7 @@ public class AdapterProduto extends ArrayAdapter<ItemProdutoFinal> {
         TextView preco = (TextView) convertView.findViewById(R.id.preco_und);
         preco.setText("Preço: R$ " + String.valueOf(temp.getPreco()));
         TextView qnt = (TextView) convertView.findViewById(R.id.quantidade);
-        qnt.setText("Qtd: " + String.valueOf(temp.getQuantidade()));
+        qnt.setText("Qtd: " + String.valueOf((int)temp.getQuantidade()));
 
         return convertView;
     }

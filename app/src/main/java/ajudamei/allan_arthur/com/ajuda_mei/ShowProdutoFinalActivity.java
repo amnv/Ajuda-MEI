@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final.EscolherProdutoFinalActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
 
 public class ShowProdutoFinalActivity extends Activity {

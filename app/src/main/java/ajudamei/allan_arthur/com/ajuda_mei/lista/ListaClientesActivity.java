@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.lista;
 
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -15,6 +15,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.AdapterCliente;
+import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.ShowMatPrimaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.Cliente;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 
@@ -27,7 +31,8 @@ public class ListaClientesActivity extends Activity {
         setContentView(R.layout.activity_lista_clientes);
 
         itens = (ListView) findViewById(R.id.lista_clientes);
-
+        View empty = findViewById(R.id.empty_lista_clientes);
+        itens.setEmptyView(empty);
         itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
