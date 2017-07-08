@@ -17,7 +17,6 @@ import java.util.List;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.mat_prima.SelecionarMatPrimaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
@@ -207,4 +206,12 @@ public class AdicionarProdutoFinalActivity extends Activity {
                 PICK_FROM_GALLERY);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(AdicionarProdutoFinalActivity.this, EscolherProdutoFinalActivity.class));
+        finish();
+    }
+
 }

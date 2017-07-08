@@ -1,11 +1,13 @@
 package ajudamei.allan_arthur.com.ajuda_mei.empregados;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 
 public class EmpregadosActivity extends Activity {
@@ -39,4 +41,12 @@ public class EmpregadosActivity extends Activity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(EmpregadosActivity.this, MainActivity.class));
+        finish();
+    }
+
 }

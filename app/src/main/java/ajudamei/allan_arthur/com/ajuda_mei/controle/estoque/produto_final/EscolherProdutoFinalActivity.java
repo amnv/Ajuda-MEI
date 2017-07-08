@@ -71,8 +71,7 @@ public class EscolherProdutoFinalActivity extends Activity {
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(EscolherProdutoFinalActivity.this, TipoEstoqueActivity.class));
         finish();

@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.mat_prima;
+package ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -16,7 +16,6 @@ import java.util.List;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterMateria;
-import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final.AdicionarProdutoFinalActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 
@@ -43,32 +42,10 @@ public class SelecionarMatPrimaActivity extends Activity implements NumberPicker
                 aux.add(item);
                 g.setItensParaDecrementar(aux);
                 show(item);
-                /*
-                if(adicionou) {
-                    Intent intent = new Intent(SelecionarMatPrimaActivity.this, AdicionarProdutoFinalActivity.class);
-                    startActivity(intent);
-                } else {
-
-                }
-                */
             }
         });
     }
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        MenuItem trocar = menu.add(0,0,0,"Adicionar Produto");
-        trocar.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        return super.onCreateOptionsMenu(menu);
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(SelecionarMatPrimaActivity.this,AdicionarMatPrimaActivity.class);
-        startActivity(intent);
-        return(super.onOptionsItemSelected(item));
-    }
-    */
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -126,5 +103,12 @@ public class SelecionarMatPrimaActivity extends Activity implements NumberPicker
         d.show();
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(SelecionarMatPrimaActivity.this, AdicionarProdutoFinalActivity.class));
+        finish();
     }
 }

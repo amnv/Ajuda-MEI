@@ -160,4 +160,11 @@ public class AdicionarMatPrimaActivity extends Activity {
                 PICK_FROM_GALLERY);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(AdicionarMatPrimaActivity.this, EscolherMatPrimaActivity.class));
+        finish();
+    }
 }

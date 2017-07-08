@@ -11,6 +11,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.CaixaDaEmpresaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.AdicionarBoletoActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.Boleto;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.BoletoAdapter;
@@ -57,5 +58,12 @@ public class EntradaRecursosActivity extends Activity {
         if (temp != null) {
             recursos.setAdapter(adapter);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(EntradaRecursosActivity.this, CaixaDaEmpresaActivity.class));
+        finish();
     }
 }

@@ -68,4 +68,11 @@ public class ShowProdutoFinalActivity extends Activity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ShowProdutoFinalActivity.this, EscolherProdutoFinalActivity.class));
+        finish();
+
+    }
 }

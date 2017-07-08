@@ -54,7 +54,7 @@
         <activity
             android:name=".caixa.registro.venda_produto.ShowRegistroVendaProdutoActivity"
             android:label="@string/title_activity_show_registro_venda_produto" />
-        <activity android:name=".controle.estoque.mat_prima.SelecionarMatPrimaActivity" />
+        <activity android:name=".controle.estoque.produto_final.SelecionarMatPrimaActivity" />
         <activity android:name=".calculo.preco.venda.CalcularPrecoVendaMainActivity" />
         <activity android:name=".calculo.preco.venda.CalcularPrecoVendaListaActivity" />
         <activity android:name=".calculo.preco.venda.CalculoPrecoVendaUmActivity" />

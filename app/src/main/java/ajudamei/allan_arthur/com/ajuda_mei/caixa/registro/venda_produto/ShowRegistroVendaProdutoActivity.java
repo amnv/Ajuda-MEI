@@ -15,11 +15,14 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.CaixaDaEmpresaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final.EscolherProdutoFinalActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
+import ajudamei.allan_arthur.com.ajuda_mei.empregados.EmpregadosActivity;
 
 public class ShowRegistroVendaProdutoActivity extends Activity implements NumberPicker.OnValueChangeListener {
     private ListView registro;
@@ -117,5 +120,12 @@ public class ShowRegistroVendaProdutoActivity extends Activity implements Number
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ShowRegistroVendaProdutoActivity.this, VendaProdutoActivity.class));
+        finish();
     }
 }

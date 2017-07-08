@@ -11,6 +11,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.CaixaDaEmpresaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.AdicionarBoletoActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.DatabaseRegistroBoleto;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.PagamentoBoletoActivity;
@@ -55,5 +56,12 @@ public class AquisicaoMatPrimaActivity extends Activity {
         if (temp != null) {
             aquisicoes.setAdapter(adapter);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(AquisicaoMatPrimaActivity.this, CaixaDaEmpresaActivity.class));
+        finish();
     }
 }

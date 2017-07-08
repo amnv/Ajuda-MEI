@@ -11,6 +11,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterProduto;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.CaixaDaEmpresaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
@@ -53,5 +54,12 @@ public class VendaProdutoActivity extends Activity {
         if (temp != null) {
             vendas.setAdapter(adapter);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(VendaProdutoActivity.this, CaixaDaEmpresaActivity.class));
+        finish();
     }
 }

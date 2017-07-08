@@ -70,13 +70,11 @@ public class ShowMatPrimaActivity extends Activity {
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         g = (UsoGeral) getApplication();
         g.setItem(null);
         startActivity(new Intent(ShowMatPrimaActivity.this, EscolherMatPrimaActivity.class));
         finish();
-
     }
 }

@@ -10,7 +10,10 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.CaixaDaEmpresaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.empregados.EmpregadosActivity;
 
 public class PagamentoBoletoActivity extends Activity {
 
@@ -52,5 +55,12 @@ public class PagamentoBoletoActivity extends Activity {
         if (temp != null) {
             itens.setAdapter(adapter);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(PagamentoBoletoActivity.this, CaixaDaEmpresaActivity.class));
+        finish();
     }
 }

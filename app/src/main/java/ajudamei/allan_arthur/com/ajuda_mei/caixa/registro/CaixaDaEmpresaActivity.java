@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.aquisicao_mat_prima.AquisicaoMatPrimaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.PagamentoBoletoActivity;
@@ -54,5 +55,12 @@ public class CaixaDaEmpresaActivity extends Activity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(CaixaDaEmpresaActivity.this, MainActivity.class));
+        finish();
     }
 }

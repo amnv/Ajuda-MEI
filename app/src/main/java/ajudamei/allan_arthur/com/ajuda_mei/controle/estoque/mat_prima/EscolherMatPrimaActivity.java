@@ -44,6 +44,7 @@ public class EscolherMatPrimaActivity extends Activity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -51,12 +52,14 @@ public class EscolherMatPrimaActivity extends Activity {
         trocar.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return super.onCreateOptionsMenu(menu);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = new Intent(EscolherMatPrimaActivity.this,AdicionarMatPrimaActivity.class);
         startActivity(intent);
         return(super.onOptionsItemSelected(item));
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -70,8 +73,7 @@ public class EscolherMatPrimaActivity extends Activity {
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(EscolherMatPrimaActivity.this, TipoEstoqueActivity.class));
         finish();
