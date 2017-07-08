@@ -1,10 +1,12 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.empregados;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import ajudamei.allan_arthur.com.ajuda_mei.R;
 
 public class EmpregadosActivity extends Activity {
 

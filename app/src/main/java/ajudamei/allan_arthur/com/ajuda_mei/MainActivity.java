@@ -1,23 +1,22 @@
 package ajudamei.allan_arthur.com.ajuda_mei;
 
 import android.app.Activity;
-import android.content.ContentProviderOperation;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
-import android.content.OperationApplicationException;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.RemoteException;
 import android.provider.ContactsContract;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 
-import java.util.ArrayList;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.CaixaDaEmpresaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.calculo.preco.venda.CalcularPrecoVendaEscolherActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.TipoEstoqueActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.empregados.EmpregadosActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.lista.ListaPessoalActivity;
 
 public class MainActivity extends Activity {
 

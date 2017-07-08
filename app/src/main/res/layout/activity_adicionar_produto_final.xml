@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ajudamei.allan_arthur.com.ajuda_mei.AdicionarProdutoFinalActivity">
+    tools:context="ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final.AdicionarProdutoFinalActivity">
 
     <TextView
         android:id="@+id/quantidade"

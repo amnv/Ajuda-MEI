@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ajudamei.allan_arthur.com.ajuda_mei.EscolherProdutoFinalActivity">
+    tools:context="ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final.EscolherProdutoFinalActivity">
 
     <ListView
         android:id="@+id/lista_produto_final"

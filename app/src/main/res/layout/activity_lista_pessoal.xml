@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ajudamei.allan_arthur.com.ajuda_mei.ListaPessoalActivity">
+    tools:context="ajudamei.allan_arthur.com.ajuda_mei.lista.ListaPessoalActivity">
 
     <Button
         android:id="@+id/bt_clientes"
