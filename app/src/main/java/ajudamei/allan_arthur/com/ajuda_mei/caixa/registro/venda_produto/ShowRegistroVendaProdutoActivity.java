@@ -15,11 +15,14 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.CaixaDaEmpresaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final.EscolherProdutoFinalActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
+import ajudamei.allan_arthur.com.ajuda_mei.empregados.EmpregadosActivity;
 
 public class ShowRegistroVendaProdutoActivity extends Activity implements NumberPicker.OnValueChangeListener {
     private ListView registro;
@@ -52,12 +55,11 @@ public class ShowRegistroVendaProdutoActivity extends Activity implements Number
             public void onClick(View v) {
                 ItemProdutoFinal item = ug.getProduto();
                 show(item);
-                db.modify(item, 1);
             }
         });
     }
 
-    public void show(ItemProdutoFinal item) {
+    public void show(final ItemProdutoFinal item) {
 
         final Dialog d = new Dialog(ShowRegistroVendaProdutoActivity.this);
         d.setTitle("Escolha a quantidade");
@@ -82,11 +84,7 @@ public class ShowRegistroVendaProdutoActivity extends Activity implements Number
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Qnt de itens escolhidos: "
                         + String.valueOf(np.getValue()), Toast.LENGTH_SHORT).show();
-                ug = (UsoGeral) getApplication();
-                List<Integer> aux = ug.getQuantidadesParaDecrementar();
-                aux.add(np.getValue());
-                ug.setQuantidadesParaDecrementar(aux);
-                adicionou = true;
+                db.modify(item, np.getValue());
                 d.dismiss(); // dismiss the dialog
             }
         });
@@ -117,5 +115,12 @@ public class ShowRegistroVendaProdutoActivity extends Activity implements Number
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ShowRegistroVendaProdutoActivity.this, VendaProdutoActivity.class));
+        finish();
     }
 }

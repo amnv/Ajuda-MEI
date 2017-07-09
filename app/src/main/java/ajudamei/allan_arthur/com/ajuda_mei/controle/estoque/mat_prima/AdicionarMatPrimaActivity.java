@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import ajudamei.allan_arthur.com.ajuda_mei.DatabaseMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 
@@ -159,5 +159,12 @@ public class AdicionarMatPrimaActivity extends Activity {
                 Intent.createChooser(intent, "Complete action using"),
                 PICK_FROM_GALLERY);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(AdicionarMatPrimaActivity.this, EscolherMatPrimaActivity.class));
+        finish();
     }
 }

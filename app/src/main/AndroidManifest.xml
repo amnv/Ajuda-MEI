@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
-            android:name=".AtualizarMatPrimaService"
+            android:name=".controle.estoque.mat_prima.AtualizarMatPrimaService"
             android:enabled="true" />
 
         <activity android:name=".MainActivity">
@@ -26,16 +26,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controle.estoque.TipoEstoqueActivity" />
-        <activity android:name=".caixa.registro.CaixaDaEmpresaActivity" />
-        <activity android:name=".lista.ListaPessoalActivity" />
-        <activity android:name=".empregados.EmpregadosActivity" />
-        <activity android:name=".controle.estoque.mat_prima.EscolherMatPrimaActivity" />
-        <activity android:name=".controle.estoque.mat_prima.AdicionarMatPrimaActivity" />
-        <activity android:name=".controle.estoque.produto_final.EscolherProdutoFinalActivity" />
+        <activity
+            android:name=".controle.estoque.TipoEstoqueActivity"
+            android:label="@string/title_activity_tipo_estoque" />
+        <activity
+            android:name=".caixa.registro.CaixaDaEmpresaActivity"
+            android:label="@string/title_activity_caixa_da_empresa" />
+        <activity
+            android:name=".lista.ListaPessoalActivity"
+            android:label="@string/title_activity_lista_pessoal" />
+        <activity
+            android:name=".empregados.EmpregadosActivity"
+            android:label="@string/title_activity_empregados" />
+        <activity
+            android:name=".empregados.DireitosEmpregadosActivity"
+            android:label="@string/title_activity_direito_empregados" />
+        <activity
+            android:name=".controle.estoque.mat_prima.EscolherMatPrimaActivity"
+            android:label="@string/title_activity_escolher_mat_prima" />
+        <activity
+            android:name=".controle.estoque.mat_prima.AdicionarMatPrimaActivity"
+            android:label="@string/title_activity_adicionar_mat_prima" />
+        <activity
+            android:name=".controle.estoque.produto_final.EscolherProdutoFinalActivity"
+            android:label="@string/title_activity_escolher_produto_final" />
         <activity
             android:name=".caixa.registro.boleto.PagamentoBoletoActivity"
-            android:label="@string/title_activity_pagamento_boleto" />
+            android:label="@string/title_activity_caixa_registro_boleto_convenio" />
         <activity
             android:name=".caixa.registro.venda_produto.VendaProdutoActivity"
             android:label="@string/title_activity_venda_produto" />
@@ -45,27 +62,57 @@
         <activity
             android:name=".caixa.registro.aquisicao_mat_prima.AquisicaoMatPrimaActivity"
             android:label="@string/title_activity_aquisicao_mat_prima" />
-        <activity android:name=".ShowMatPrimaActivity" />
-        <activity android:name=".controle.estoque.produto_final.AdicionarProdutoFinalActivity" />
-        <activity android:name=".lista.AdicionarPessoalActivity" />
         <activity
-            android:name=".ShowProdutoFinalActivity"
+            android:name=".controle.estoque.mat_prima.ShowMatPrimaActivity"
+            android:label="@string/title_activity_show_mat_prima" />
+        <activity
+            android:name=".controle.estoque.produto_final.AdicionarProdutoFinalActivity"
+            android:label="@string/title_activity_adicionar_produto_final" />
+        <activity
+            android:name=".lista.AdicionarPessoalActivity"
+            android:label="@string/title_activity_adicionar_pessoal" />
+        <activity
+            android:name=".controle.estoque.produto_final.ShowProdutoFinalActivity"
             android:label="@string/title_activity_show_produto_final" />
         <activity
             android:name=".caixa.registro.venda_produto.ShowRegistroVendaProdutoActivity"
             android:label="@string/title_activity_show_registro_venda_produto" />
-        <activity android:name=".SelecionarMatPrimaActivity" />
-        <activity android:name=".calculo.preco.venda.CalcularPrecoVendaMainActivity" />
-        <activity android:name=".calculo.preco.venda.CalcularPrecoVendaListaActivity" />
-        <activity android:name=".calculo.preco.venda.CalculoPrecoVendaUmActivity" />
-        <activity android:name=".calculo.preco.venda.CalcularPrecoVendaEscolherActivity" />
-        <activity android:name=".calculo.preco.venda.CalcularPrecoVendaDoisActivity" />
-        <activity android:name=".lista.ListaClientesActivity" />
-        <activity android:name=".lista.ListaFuncionariosActivity" />
-        <activity android:name=".caixa.registro.boleto.AdicionarBoletoActivity" />
-        <activity android:name=".caixa.registro.entrada_recurso.AdicionarEntradaRecursoActivity" />
-        <activity android:name=".caixa.registro.aquisicao_mat_prima.AdicionarAquisicaoActivity" />
-        <activity android:name=".empregados.DireitosEmpregadosActivity"></activity>
+        <activity
+            android:name=".controle.estoque.produto_final.SelecionarMatPrimaActivity"
+            android:label="@string/title_activity_selecionar_mat_prima" />
+        <activity
+            android:name=".calculo.preco.venda.CalcularPrecoVendaMainActivity"
+            android:label="@string/title_activity_calcular_preco_venda_main" />
+        <activity
+            android:name=".calculo.preco.venda.CalcularPrecoVendaListaActivity"
+            android:label="@string/title_activity_calcular_preco_venda_lista" />
+        <activity
+            android:name=".calculo.preco.venda.CalculoPrecoVendaUmActivity"
+            android:label="@string/title_activity_calcular_preco_venda_um" />
+        <activity
+            android:name=".calculo.preco.venda.CalcularPrecoVendaEscolherActivity"
+            android:label="@string/title_activity_calcular_preco_venda_escolher" />
+        <activity
+            android:name=".calculo.preco.venda.CalcularPrecoVendaDoisActivity"
+            android:label="@string/title_activity_calcular_preco_venda_dois" />
+        <activity
+            android:name=".lista.ListaClientesActivity"
+            android:label="@string/title_activity_lista_clientes" />
+        <activity
+            android:name=".lista.ListaFornecedoresActivity"
+            android:label="@string/title_activity_lista_fornecedores" />
+        <activity
+            android:name=".caixa.registro.boleto.AdicionarBoletoActivity"
+            android:label="@string/title_activity_adicionar_registro_boleto" />
+        <activity
+            android:name=".caixa.registro.entrada_recurso.AdicionarEntradaRecursoActivity"
+            android:label="@string/title_activity_adicionar_registro_entrada_recurso" />
+        <activity
+            android:name=".caixa.registro.aquisicao_mat_prima.AdicionarAquisicaoActivity"
+            android:label="@string/title_activity_adicionar_registro_aquisicao" />
+        <activity
+            android:name=".empregados.ListaEmpregadosActivity"
+            android:label="@string/title_activity_lista_empregados"></activity>
     </application>
 
 </manifest>

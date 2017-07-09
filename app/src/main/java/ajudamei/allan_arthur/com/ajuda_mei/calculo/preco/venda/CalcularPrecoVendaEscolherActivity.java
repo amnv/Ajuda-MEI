@@ -9,8 +9,8 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.AdapterProduto;
-import ajudamei.allan_arthur.com.ajuda_mei.DatabaseProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterProduto;
+import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
@@ -29,7 +29,8 @@ public class CalcularPrecoVendaEscolherActivity extends Activity {
         db = new DatabaseProdutoFinal(this);
 
         itens = (ListView) findViewById(R.id.lista_mat_prima);
-
+        View empty = findViewById(R.id.empty_calcular_preco_venda_escolher);
+        itens.setEmptyView(empty);
         itens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

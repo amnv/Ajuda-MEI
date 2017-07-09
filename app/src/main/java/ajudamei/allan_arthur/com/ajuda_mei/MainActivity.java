@@ -32,7 +32,7 @@ public class MainActivity extends Activity{
 
         if(!check){
             checkContactsGroup("Clientes");
-            checkContactsGroup("Funcionários");
+            checkContactsGroup("Fornecedores");
             SharedPreferences setting = getSharedPreferences(MY_PREFS_NAME, 0);
             SharedPreferences.Editor editor = setting.edit();
             editor.putBoolean("criados", true);
@@ -88,14 +88,12 @@ public class MainActivity extends Activity{
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         Intent a = new Intent(Intent.ACTION_MAIN);
         a.addCategory(Intent.CATEGORY_HOME);
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(a);
-
     }
 
     public void checkContactsGroup(String nomeGrupo){
@@ -127,6 +125,5 @@ public class MainActivity extends Activity{
         groupCursor.close();
 
     }
-
 
 }

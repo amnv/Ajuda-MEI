@@ -4,17 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final.SelecionarMatPrimaActivity">
+    tools:context="ajudamei.allan_arthur.com.ajuda_mei.empregados.ListaEmpregadosActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/empty_lista_empregados"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:text="Não há empregados"/>
 
     <ListView
-        android:id="@+id/lv_mat_prima"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/lista_empregados"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

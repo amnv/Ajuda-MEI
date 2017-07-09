@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei;
+package ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,10 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.produto_final.EscolherProdutoFinalActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterRegistro;
+import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
 
 public class ShowProdutoFinalActivity extends Activity {
@@ -65,4 +68,11 @@ public class ShowProdutoFinalActivity extends Activity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ShowProdutoFinalActivity.this, EscolherProdutoFinalActivity.class));
+        finish();
+
+    }
 }

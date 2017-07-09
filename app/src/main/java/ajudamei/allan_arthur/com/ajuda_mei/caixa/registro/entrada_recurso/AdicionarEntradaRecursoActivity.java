@@ -1,5 +1,6 @@
 package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.entrada_recurso;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -36,5 +37,12 @@ public class AdicionarEntradaRecursoActivity extends Activity {
                 db.insert(aux);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(AdicionarEntradaRecursoActivity.this, EntradaRecursosActivity.class));
+        finish();
     }
 }

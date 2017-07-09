@@ -12,10 +12,9 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.AdapterMateria;
-import ajudamei.allan_arthur.com.ajuda_mei.DatabaseMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterMateria;
+import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.ShowMatPrimaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.TipoEstoqueActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
@@ -45,19 +44,22 @@ public class EscolherMatPrimaActivity extends Activity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        MenuItem trocar = menu.add(0,0,0,"Adicionar Produto");
+        MenuItem trocar = menu.add(0,0,0,"Adicionar");
         trocar.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return super.onCreateOptionsMenu(menu);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = new Intent(EscolherMatPrimaActivity.this,AdicionarMatPrimaActivity.class);
         startActivity(intent);
         return(super.onOptionsItemSelected(item));
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -71,8 +73,7 @@ public class EscolherMatPrimaActivity extends Activity {
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(EscolherMatPrimaActivity.this, TipoEstoqueActivity.class));
         finish();
