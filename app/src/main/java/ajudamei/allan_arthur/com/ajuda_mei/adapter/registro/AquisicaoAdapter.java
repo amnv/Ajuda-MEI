@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.aquisicao.materia_prima;
+package ajudamei.allan_arthur.com.ajuda_mei.adapter.registro;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Aquisicao;
 
 /**
  * Created by Allan on 22/06/2017.

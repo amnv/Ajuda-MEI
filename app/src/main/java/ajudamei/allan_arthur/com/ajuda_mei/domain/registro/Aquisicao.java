@@ -1,6 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.aquisicao.materia_prima;
-
-import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Registro;
+package ajudamei.allan_arthur.com.ajuda_mei.domain.registro;
 
 /**
  * Created by Allan on 22/06/2017.

@@ -87,7 +87,7 @@
             android:name=".calculo.preco.venda.CalcularPrecoVendaListaActivity"
             android:label="@string/title_activity_calcular_preco_venda_lista" />
         <activity
-            android:name=".calculo.preco.venda.CalculoPrecoVendaUmActivity"
+            android:name=".calculo.preco.venda.CalcularPrecoVendaUmActivity"
             android:label="@string/title_activity_calcular_preco_venda_um" />
         <activity
             android:name=".calculo.preco.venda.CalcularPrecoVendaEscolherActivity"

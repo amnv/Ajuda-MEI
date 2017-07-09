@@ -17,7 +17,7 @@ import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
-import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterFornecedor;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.pessoa.AdapterFornecedor;
 import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.materia_prima.ShowMatPrimaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.pessoa.Fornecedor;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemProdutoFinal;

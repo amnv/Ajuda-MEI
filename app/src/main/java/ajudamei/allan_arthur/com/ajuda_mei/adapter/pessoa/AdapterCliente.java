@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei.adapter;
+package ajudamei.allan_arthur.com.ajuda_mei.adapter.pessoa;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,15 +10,15 @@ import android.widget.TextView;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.pessoa.Fornecedor;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.pessoa.Cliente;
 
 /**
- * Created by Allan on 08/07/2017.
+ * Created by arthur on 03/07/17.
  */
 
-public class AdapterFornecedor extends ArrayAdapter<Fornecedor> {
+public class AdapterCliente extends ArrayAdapter<Cliente> {
 
-    public AdapterFornecedor(Context context, int resource, List<Fornecedor> objects) {
+    public AdapterCliente(Context context, int resource, List<Cliente> objects) {
         super(context, resource, objects);
     }
 
@@ -30,7 +30,7 @@ public class AdapterFornecedor extends ArrayAdapter<Fornecedor> {
             convertView = inflater.inflate(R.layout.dataregistro, parent, false);
         }
 
-        Fornecedor temp = getItem(position);
+        Cliente temp = getItem(position);
 
         TextView data = (TextView) convertView.findViewById(R.id.txt_data);
         data.setText("Nome: " + temp.getNome());

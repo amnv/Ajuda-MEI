@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterProduto;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.item.AdapterProduto;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;

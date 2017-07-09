@@ -19,7 +19,7 @@ import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemProdutoFinal;
 
-public class CalculoPrecoVendaUmActivity extends Activity {
+public class CalcularPrecoVendaUmActivity extends Activity {
     private DatabaseProdutoFinal db;
     private UsoGeral g;
 
@@ -71,7 +71,7 @@ public class CalculoPrecoVendaUmActivity extends Activity {
                 double marg = Double.parseDouble(margem.getText().toString());
                 double cust = Double.parseDouble(custo.getText().toString());
                 final double resp = cust + (cust * (marg / 100));
-                new AlertDialog.Builder(CalculoPrecoVendaUmActivity.this)
+                new AlertDialog.Builder(CalcularPrecoVendaUmActivity.this)
                         .setTitle("Cálculo do preço de venda")
                         .setMessage("O preço final do seu produto foi de: R$" + resp)
                         .setNegativeButton("Cancelar", null) // dismisses by default
@@ -79,7 +79,7 @@ public class CalculoPrecoVendaUmActivity extends Activity {
                             @Override public void onClick(DialogInterface dialog, int which) {
                                 db.modifyPreco(g.getTemp(), resp);
                                 Toast.makeText(getApplicationContext(), "Preço atualizado!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(CalculoPrecoVendaUmActivity.this, MainActivity.class);
+                                Intent intent = new Intent(CalcularPrecoVendaUmActivity.this, MainActivity.class);
                                 startActivity(intent);
                             }
                         })

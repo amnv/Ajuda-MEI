@@ -11,7 +11,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.adapter.RecursoAdapter;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.registro.RecursoAdapter;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.CaixaDaEmpresaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseRegistroRecurso;
 import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Recurso;

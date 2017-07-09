@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei.adapter;
+package ajudamei.allan_arthur.com.ajuda_mei.adapter.registro;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,15 +10,15 @@ import android.widget.TextView;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Boleto;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Recurso;
 
 /**
  * Created by Allan on 22/06/2017.
  */
 
-public class BoletoAdapter extends ArrayAdapter<Boleto> {
+public class RecursoAdapter extends ArrayAdapter<Recurso> {
 
-    public BoletoAdapter(Context context, int resource, List<Boleto> objects) {
+    public RecursoAdapter(Context context, int resource, List<Recurso> objects) {
         super(context, resource, objects);
     }
 
@@ -30,7 +30,7 @@ public class BoletoAdapter extends ArrayAdapter<Boleto> {
             convertView = inflater.inflate(R.layout.registrolista, parent, false);
         }
 
-        Boleto temp = getItem(position);
+        Recurso temp = getItem(position);
 
         TextView descricao = (TextView) convertView.findViewById(R.id.registro_info);
         descricao.setText(temp.getDescricao());

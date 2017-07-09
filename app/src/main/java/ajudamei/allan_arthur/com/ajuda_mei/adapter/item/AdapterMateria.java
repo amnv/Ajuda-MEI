@@ -1,4 +1,4 @@
-package ajudamei.allan_arthur.com.ajuda_mei.adapter;
+package ajudamei.allan_arthur.com.ajuda_mei.adapter.item;
 
 import android.content.Context;
 import android.view.LayoutInflater;

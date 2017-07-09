@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Aquisicao;
+
 /**
  * Created by Allan on 22/06/2017.
  */
