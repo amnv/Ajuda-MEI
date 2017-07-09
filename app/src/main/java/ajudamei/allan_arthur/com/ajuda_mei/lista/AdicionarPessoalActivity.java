@@ -70,7 +70,7 @@ public class AdicionarPessoalActivity extends Activity {
                     if(spinner.getSelectedItem().toString().equals(FORMAS[0])){
                         grupo = "Clientes";
                     } else {
-                        grupo = "Funcionários";
+                        grupo = "Fornecedores";
                     }
                     ContentResolver cr = getContentResolver();
                     cursor = cr.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC");
@@ -213,4 +213,10 @@ public class AdicionarPessoalActivity extends Activity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(AdicionarPessoalActivity.this, ListaPessoalActivity.class));
+        finish();
+    }
 }

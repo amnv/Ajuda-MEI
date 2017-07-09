@@ -39,6 +39,9 @@
             android:name=".empregados.EmpregadosActivity"
             android:label="@string/title_activity_empregados" />
         <activity
+            android:name=".empregados.DireitosEmpregadosActivity"
+            android:label="@string/title_activity_direito_empregados" />
+        <activity
             android:name=".controle.estoque.mat_prima.EscolherMatPrimaActivity"
             android:label="@string/title_activity_escolher_mat_prima" />
         <activity
@@ -96,8 +99,8 @@
             android:name=".lista.ListaClientesActivity"
             android:label="@string/title_activity_lista_clientes"/>
         <activity
-            android:name=".lista.ListaFuncionariosActivity"
-            android:label="@string/title_activity_lista_funcionarios"/>
+            android:name=".lista.ListaFornecedoresActivity"
+            android:label="@string/title_activity_lista_fornecedores"/>
         <activity
             android:name=".caixa.registro.boleto.AdicionarBoletoActivity"
             android:label="@string/title_activity_adicionar_registro_boleto"/>

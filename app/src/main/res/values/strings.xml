@@ -37,8 +37,9 @@
     <string name="title_activity_selecionar_mat_prima">Selecionar materia-prima</string>
 
     <string name="title_activity_empregados">Funcionarios</string>
+    <string name="title_activity_direito_empregados">Direitos</string>
     <string name="title_activity_lista_pessoal">Controle pessoal</string>
-    <string name="title_activity_lista_funcionarios">Lista de funcionarios</string>
+    <string name="title_activity_lista_fornecedores">Lista de fornecedores</string>
     <string name="title_activity_lista_clientes">Lista de clientes</string>
 
     <string name="title_activity_caixa_registro_boleto_convenio">Pagamentos me boleto</string>

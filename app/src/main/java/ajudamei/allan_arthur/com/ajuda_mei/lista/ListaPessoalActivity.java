@@ -7,8 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
+import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 
 public class ListaPessoalActivity extends Activity {
@@ -27,11 +27,12 @@ public class ListaPessoalActivity extends Activity {
             }
         });
 
-        final Button bt2 = (Button) findViewById(R.id.bt_funcionarios);
+        final Button bt2 = (Button) findViewById(R.id.bt_fornecedores);
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ListaPessoalActivity.this, ListaFornecedoresActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -51,5 +52,10 @@ public class ListaPessoalActivity extends Activity {
         return(super.onOptionsItemSelected(item));
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ListaPessoalActivity.this, MainActivity.class));
+        finish();
+    }
 }

@@ -32,7 +32,7 @@ public class MainActivity extends Activity{
 
         if(!check){
             checkContactsGroup("Clientes");
-            checkContactsGroup("Funcionários");
+            checkContactsGroup("Fornecedores");
             SharedPreferences setting = getSharedPreferences(MY_PREFS_NAME, 0);
             SharedPreferences.Editor editor = setting.edit();
             editor.putBoolean("criados", true);

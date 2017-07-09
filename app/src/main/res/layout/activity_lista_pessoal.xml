@@ -22,10 +22,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bt_funcionarios"
+        android:id="@+id/bt_fornecedores"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Funcionários"
+        android:text="Fornecedores"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         android:layout_marginStart="8dp"
