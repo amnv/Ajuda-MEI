@@ -33,14 +33,12 @@ public class AdapterEmpregado extends ArrayAdapter<Empregado> {
 
         Empregado temp = getItem(position);
 
-        ImageView img = (ImageView) convertView.findViewById(R.id.imagem);
-        img.setImageBitmap(temp.getFoto());
         TextView nome = (TextView) convertView.findViewById(R.id.empregado_nome);
         nome.setText("Nome: " + temp.getNome());
-        TextView cpf = (TextView) convertView.findViewById(R.id.empregado_cpf);
-        cpf.setText("CPF: " + temp.getCpf());
-        TextView qnt = (TextView) convertView.findViewById(R.id.empregado_telefone);
-        qnt.setText("Telefone: " + temp.getTelefone());
+        TextView salario = (TextView) convertView.findViewById(R.id.empregado_salario);
+        salario.setText("Salário: R$" + temp.getSalario());
+        TextView per = (TextView) convertView.findViewById(R.id.empregado_per);
+        per.setText("Recebe a cada: " + temp.getPeriodicidade() + " dias");
         return convertView;
     }
 }

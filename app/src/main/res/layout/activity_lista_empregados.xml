@@ -7,8 +7,10 @@
     tools:context="ajudamei.allan_arthur.com.ajuda_mei.empregados.ListaEmpregadosActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="304dp"
+        android:layout_height="445dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
 
     <TextView
         android:id="@+id/empty_lista_empregados"

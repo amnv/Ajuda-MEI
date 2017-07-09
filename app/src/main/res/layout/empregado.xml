@@ -11,46 +11,32 @@
         android:layout_width="200dp"
         android:layout_height="25dp"
         android:visibility="visible"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toRightOf="@+id/empregado_foto"
-        app:layout_constraintRight_toRightOf="@+id/empregado_cpf"
+        app:layout_constraintRight_toRightOf="@+id/empregado_salario"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <TextView
-        android:id="@+id/empregado_cpf"
+        android:id="@+id/empregado_salario"
         android:layout_width="200dp"
         android:layout_height="25dp"
         android:visibility="visible"
-        app:layout_constraintLeft_toRightOf="@+id/empregado_foto"
         app:layout_constraintTop_toBottomOf="@+id/empregado_nome"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_marginTop="0dp" />
 
     <TextView
-        android:id="@+id/empregado_telefone"
+        android:id="@+id/empregado_per"
         android:layout_width="200dp"
         android:layout_height="25dp"
         android:visibility="visible"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toRightOf="@+id/empregado_foto"
-        app:layout_constraintRight_toRightOf="@+id/empregado_cpf"
-        app:layout_constraintTop_toBottomOf="@+id/empregado_cpf"
+        app:layout_constraintRight_toRightOf="@+id/empregado_salario"
+        app:layout_constraintTop_toBottomOf="@+id/empregado_salario"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
-    <ImageView
-        android:id="@+id/empregado_foto"
-        android:layout_width="148dp"
-        android:layout_height="112dp"
-        android:src="@android:drawable/alert_dark_frame"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="@+id/empregado_cpf"
-        app:layout_constraintTop_toBottomOf="@+id/empregado_cpf"
-        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

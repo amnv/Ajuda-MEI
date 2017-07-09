@@ -34,7 +34,7 @@ public class AdapterFornecedor extends ArrayAdapter<Fornecedor> {
 
         TextView data = (TextView) convertView.findViewById(R.id.txt_data);
         data.setText("Nome: " + temp.getNome());
-        TextView qnt = (TextView) convertView.findViewById(R.id.txt_telefone);
+        TextView qnt = (TextView) convertView.findViewById(R.id.txt_per);
         qnt.setText("Telefone: " + temp.getTelefone());
 
         return convertView;

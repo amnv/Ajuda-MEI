@@ -48,12 +48,12 @@ public class AdicionarPessoalActivity extends Activity {
         stringArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(stringArrayAdapter);
 
-        confirmarAdd = (Button) findViewById(R.id.bt_calcular_nova_margem);
+        confirmarAdd = (Button) findViewById(R.id.bt_add_empregado);
         tirarFoto = (Button) findViewById(R.id.bt_tirar_foto);
         escolherFoto = (Button) findViewById(R.id.bt_escolher_foto);
         nome = (EditText) findViewById(R.id.txt_nome);
         email = (EditText) findViewById(R.id.txt_email);
-        telefone = (EditText) findViewById(R.id.txt_telefone);
+        telefone = (EditText) findViewById(R.id.txt_per);
         img = (ImageView) findViewById(R.id.img_view_foto);
 
 

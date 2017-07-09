@@ -9,15 +9,13 @@ import android.graphics.Bitmap;
 public class Empregado {
 
     private String nome;
-    private String cpf;
-    private String telefone;
-    private Bitmap foto;
+    private double salario;
+    private int periodicidade;
 
-    public Empregado(String nome, String cpf, String telefone, Bitmap foto) {
+    public Empregado(String nome, double salario, int periodicidade) {
         this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.foto = foto;
+        this.salario = salario;
+        this.periodicidade = periodicidade;
     }
 
     public String getNome() {
@@ -28,28 +26,19 @@ public class Empregado {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public double getSalario() {
+        return salario;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public int getPeriodicidade() {
+        return periodicidade;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public Bitmap getFoto() {
-        return foto;
-    }
-
-    public Empregado setFoto(Bitmap foto) {
-        this.foto = foto;
-        return this;
+    public void setPeriodicidade(int periodicidade) {
+        this.periodicidade = periodicidade;
     }
 }

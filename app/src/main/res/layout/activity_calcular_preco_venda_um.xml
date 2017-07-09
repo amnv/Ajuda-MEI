@@ -39,7 +39,7 @@
 
 
     <Button
-        android:id="@+id/bt_calcular_nova_margem"
+        android:id="@+id/bt_add_empregado"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginBottom="45dp"

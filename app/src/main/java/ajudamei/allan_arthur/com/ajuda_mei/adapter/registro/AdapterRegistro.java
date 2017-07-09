@@ -34,7 +34,7 @@ public class AdapterRegistro extends ArrayAdapter<Registro> {
 
         TextView data = (TextView) convertView.findViewById(R.id.txt_data);
         data.setText("Data: " + temp.getData());
-        TextView qnt = (TextView) convertView.findViewById(R.id.txt_telefone);
+        TextView qnt = (TextView) convertView.findViewById(R.id.txt_per);
         qnt.setText("Qtd: " + String.valueOf(temp.getQuantidade()));
 
         return convertView;

@@ -38,7 +38,7 @@ public class CalcularPrecoVendaUmActivity extends Activity {
         tvNome = (TextView) findViewById(R.id.tv_nome_produto);
         custo = (EditText) findViewById(R.id.txt_margem_atual);
         margem = (EditText) findViewById(R.id.txt_novo_preco);
-        calcular = (Button) findViewById(R.id.bt_calcular_nova_margem);
+        calcular = (Button) findViewById(R.id.bt_add_empregado);
         barra = (SeekBar) findViewById(R.id.seekBar);
 
         g = (UsoGeral) getApplication();

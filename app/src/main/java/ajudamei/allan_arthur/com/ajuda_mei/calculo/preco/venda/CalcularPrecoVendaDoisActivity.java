@@ -37,7 +37,7 @@ public class CalcularPrecoVendaDoisActivity extends Activity {
         tvNome = (TextView) findViewById(R.id.tv_nome_produto);
         margemAtual = (EditText) findViewById(R.id.txt_margem_atual);
         novoPreco = (EditText) findViewById(R.id.txt_novo_preco);
-        calcular = (Button) findViewById(R.id.bt_calcular_nova_margem);
+        calcular = (Button) findViewById(R.id.bt_add_empregado);
 
         g = (UsoGeral) getApplication();
         final ItemProdutoFinal item = g.getTemp();
