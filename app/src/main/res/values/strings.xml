@@ -49,4 +49,5 @@
     <string name="title_activity_caixa_registro_aquisicao_mat_prima">Aquisições de materia-prima</string>
 
     <string name="title_activity_controle_estoque_"></string>
+    <string name="title_activity_lista_empregados">ListaEmpregadosActivity</string>
 </resources>

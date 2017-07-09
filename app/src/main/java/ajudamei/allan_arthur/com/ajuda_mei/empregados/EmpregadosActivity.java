@@ -21,7 +21,8 @@ public class EmpregadosActivity extends Activity {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Fazer próxima tela", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(EmpregadosActivity.this, ListaEmpregadosActivity.class);
+                startActivity(intent);
             }
         });
 
