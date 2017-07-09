@@ -55,12 +55,11 @@ public class ShowRegistroVendaProdutoActivity extends Activity implements Number
             public void onClick(View v) {
                 ItemProdutoFinal item = ug.getProduto();
                 show(item);
-                db.modify(item, 1);
             }
         });
     }
 
-    public void show(ItemProdutoFinal item) {
+    public void show(final ItemProdutoFinal item) {
 
         final Dialog d = new Dialog(ShowRegistroVendaProdutoActivity.this);
         d.setTitle("Escolha a quantidade");
@@ -85,11 +84,7 @@ public class ShowRegistroVendaProdutoActivity extends Activity implements Number
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Qnt de itens escolhidos: "
                         + String.valueOf(np.getValue()), Toast.LENGTH_SHORT).show();
-                ug = (UsoGeral) getApplication();
-                List<Integer> aux = ug.getQuantidadesParaDecrementar();
-                aux.add(np.getValue());
-                ug.setQuantidadesParaDecrementar(aux);
-                adicionou = true;
+                db.modify(item, np.getValue());
                 d.dismiss(); // dismiss the dialog
             }
         });
