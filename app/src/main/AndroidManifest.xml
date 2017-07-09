@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
-            android:name=".controle.estoque.mat_prima.AtualizarMatPrimaService"
+            android:name=".controle.estoque.materia_prima.AtualizarMatPrimaService"
             android:enabled="true" />
 
         <activity android:name=".MainActivity">
@@ -42,28 +42,28 @@
             android:name=".empregados.DireitosEmpregadosActivity"
             android:label="@string/title_activity_direito_empregados" />
         <activity
-            android:name=".controle.estoque.mat_prima.EscolherMatPrimaActivity"
+            android:name=".controle.estoque.materia_prima.EscolherMatPrimaActivity"
             android:label="@string/title_activity_escolher_mat_prima" />
         <activity
-            android:name=".controle.estoque.mat_prima.AdicionarMatPrimaActivity"
+            android:name=".controle.estoque.materia_prima.AdicionarMatPrimaActivity"
             android:label="@string/title_activity_adicionar_mat_prima" />
         <activity
             android:name=".controle.estoque.produto_final.EscolherProdutoFinalActivity"
             android:label="@string/title_activity_escolher_produto_final" />
         <activity
-            android:name=".caixa.registro.boleto.PagamentoBoletoActivity"
+            android:name=".caixa.registro.pagamento.boleto.PagamentoBoletoActivity"
             android:label="@string/title_activity_caixa_registro_boleto_convenio" />
         <activity
-            android:name=".caixa.registro.venda_produto.VendaProdutoActivity"
+            android:name=".caixa.registro.venda.produto_final.VendaProdutoActivity"
             android:label="@string/title_activity_venda_produto" />
         <activity
-            android:name=".caixa.registro.entrada_recurso.EntradaRecursosActivity"
+            android:name=".caixa.registro.entrada.recurso.EntradaRecursosActivity"
             android:label="@string/title_activity_entrada_recursos" />
         <activity
-            android:name=".caixa.registro.aquisicao_mat_prima.AquisicaoMatPrimaActivity"
+            android:name=".caixa.registro.aquisicao.materia_prima.AquisicaoMatPrimaActivity"
             android:label="@string/title_activity_aquisicao_mat_prima" />
         <activity
-            android:name=".controle.estoque.mat_prima.ShowMatPrimaActivity"
+            android:name=".controle.estoque.materia_prima.ShowMatPrimaActivity"
             android:label="@string/title_activity_show_mat_prima" />
         <activity
             android:name=".controle.estoque.produto_final.AdicionarProdutoFinalActivity"
@@ -75,7 +75,7 @@
             android:name=".controle.estoque.produto_final.ShowProdutoFinalActivity"
             android:label="@string/title_activity_show_produto_final" />
         <activity
-            android:name=".caixa.registro.venda_produto.ShowRegistroVendaProdutoActivity"
+            android:name=".caixa.registro.venda.produto_final.ShowRegistroVendaProdutoActivity"
             android:label="@string/title_activity_show_registro_venda_produto" />
         <activity
             android:name=".controle.estoque.produto_final.SelecionarMatPrimaActivity"
@@ -102,19 +102,19 @@
             android:name=".lista.ListaFornecedoresActivity"
             android:label="@string/title_activity_lista_fornecedores" />
         <activity
-            android:name=".caixa.registro.boleto.AdicionarBoletoActivity"
+            android:name=".caixa.registro.pagamento.boleto.AdicionarBoletoActivity"
             android:label="@string/title_activity_adicionar_registro_boleto" />
         <activity
-            android:name=".caixa.registro.entrada_recurso.AdicionarEntradaRecursoActivity"
+            android:name=".caixa.registro.entrada.recurso.AdicionarEntradaRecursoActivity"
             android:label="@string/title_activity_adicionar_registro_entrada_recurso" />
         <activity
-            android:name=".caixa.registro.aquisicao_mat_prima.AdicionarAquisicaoActivity"
+            android:name=".caixa.registro.aquisicao.AdicionarAquisicaoActivity"
             android:label="@string/title_activity_adicionar_registro_aquisicao" />
         <activity
             android:name=".empregados.ListaEmpregadosActivity"
             android:label="@string/title_activity_lista_empregados" />
         <activity
-            android:name=".caixa.registro.aquisicao_mat_prima.ShowRegistroAquisicaoMatPrimaActivity"
+            android:name=".caixa.registro.aquisicao.materia_prima.ShowRegistroAquisicaoMatPrimaActivity"
             android:label="@string/title_activity_show_registro_aquisicao_mat_prima"></activity>
     </application>
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.mat_prima.ShowMatPrimaActivity">
+    tools:context="ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.materia_prima.ShowMatPrimaActivity">
 
     <ImageView
         android:id="@+id/img_mat_prima"

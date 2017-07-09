@@ -11,8 +11,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Item;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.Item;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemMateriaPrima;
 
 /**
  * Created by Allan on 31/05/2017.

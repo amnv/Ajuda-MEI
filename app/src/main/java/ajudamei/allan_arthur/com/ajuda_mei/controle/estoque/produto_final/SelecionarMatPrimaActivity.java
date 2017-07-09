@@ -17,7 +17,7 @@ import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterMateria;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseMateriaPrima;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemMateriaPrima;
 
 public class SelecionarMatPrimaActivity extends Activity implements NumberPicker.OnValueChangeListener{
     private DatabaseMateriaPrima db;

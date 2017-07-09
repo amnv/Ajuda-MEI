@@ -50,6 +50,5 @@
 
     <string name="title_activity_controle_estoque_"></string>
     <string name="title_activity_lista_empregados">ListaEmpregadosActivity</string>
-    <string name="title_activity_show_registro_aquisicao_mat_prima">ShowRegistroAquisicaoMatPrima
-    </string>
+    <string name="title_activity_show_registro_aquisicao_mat_prima">Registro de aquisicao de materia-prima</string>
 </resources>

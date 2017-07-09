@@ -5,9 +5,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +17,7 @@ import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemProdutoFinal;
 
 public class CalculoPrecoVendaUmActivity extends Activity {
     private DatabaseProdutoFinal db;

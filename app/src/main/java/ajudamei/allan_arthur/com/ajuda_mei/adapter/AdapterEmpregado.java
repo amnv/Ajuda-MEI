@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Empregado;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.pessoa.Empregado;
 
 /**
  * Created by Allan on 08/07/2017.

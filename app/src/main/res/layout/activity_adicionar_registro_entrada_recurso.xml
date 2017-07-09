@@ -1,52 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textViewEntradaRecursoDescricao"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Descrição" />
+        android:text="Descrição"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextEntradaRecursoDescricao"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Descrição" />
+        android:hint="Descrição"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/textViewEntradaRecursoDescricao"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEntradaRecursoDescricao"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewEntradaRecursoDescricao" />
+
     <TextView
         android:id="@+id/textViewEntradaRecursoPreco"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Preço" />
+        android:text="Preço"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/editTextEntradaRecursoDescricao"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEntradaRecursoDescricao"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/editTextEntradaRecursoDescricao" />
 
     <EditText
         android:id="@+id/editTextEntradaRecursoPreco"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Preço" />
+        android:hint="Preço"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/textViewEntradaRecursoPreco"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEntradaRecursoPreco"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewEntradaRecursoPreco" />
+
     <TextView
         android:id="@+id/textViewEntradaRecursoData"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Data" />
+        android:text="Data"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/editTextEntradaRecursoPreco"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEntradaRecursoPreco"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/editTextEntradaRecursoPreco" />
 
     <EditText
         android:id="@+id/editTextEntradaRecursoData"
-        android:layout_width="match_parent"
+        android:layout_width="144dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Data" />
+        android:hint="Data"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="139dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bt_calendario_entrada_recurso"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="1.0" />
+
 
     <Button
         android:id="@+id/bt_adicionar_entrada_recurso"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Adicionar entra de recurso" />
+        android:layout_width="260dp"
+        android:layout_height="74dp"
+        android:text="Adicionar entrada de recurso"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/editTextEntradaRecursoData"
+        android:layout_marginTop="43dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEntradaRecursoData"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/editTextEntradaRecursoData"
+        app:layout_constraintHorizontal_bias="0.0" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/bt_calendario_entrada_recurso"
+        android:layout_width="117dp"
+        android:layout_height="36dp"
+        android:text="Calendario"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_adicionar_entrada_recurso"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEntradaRecursoData"
+        app:layout_constraintVertical_bias="0.136"
+        android:background="@color/colorPrimaryDark"
+        style="@style/buttonCalendarStyle"
+        android:layout_marginRight="61dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

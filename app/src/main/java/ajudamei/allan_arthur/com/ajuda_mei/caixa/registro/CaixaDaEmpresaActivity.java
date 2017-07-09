@@ -8,10 +8,10 @@ import android.widget.Button;
 
 import ajudamei.allan_arthur.com.ajuda_mei.MainActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.aquisicao_mat_prima.AquisicaoMatPrimaActivity;
-import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.PagamentoBoletoActivity;
-import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.entrada_recurso.EntradaRecursosActivity;
-import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.venda_produto.VendaProdutoActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.aquisicao.materia_prima.AquisicaoMatPrimaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.pagamento.boleto.PagamentoBoletoActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.entrada.recurso.EntradaRecursosActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.venda.produto_final.VendaProdutoActivity;
 
 public class CaixaDaEmpresaActivity extends Activity {
 

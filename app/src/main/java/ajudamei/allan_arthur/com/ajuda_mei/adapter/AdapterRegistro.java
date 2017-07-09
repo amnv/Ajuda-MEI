@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Registro;
 
 /**
  * Created by arthur on 28/06/17.

@@ -18,9 +18,9 @@ import java.util.List;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterFornecedor;
-import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.mat_prima.ShowMatPrimaActivity;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Fornecedor;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.materia_prima.ShowMatPrimaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.pessoa.Fornecedor;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemProdutoFinal;
 
 public class ListaFornecedoresActivity extends Activity {
     private ListView itens;

@@ -85,14 +85,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewBoletoData"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/bt_calendario"
+        app:layout_constraintRight_toLeftOf="@+id/bt_calendario_boleto"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="0dp"
         android:layout_marginRight="8dp"
         app:layout_constraintHorizontal_bias="1.0"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/bt_adicionar_boleto"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/bt_adicionar_boleto"
@@ -109,7 +109,7 @@
         app:layout_constraintHorizontal_bias="0.0" />
 
     <Button
-        android:id="@+id/bt_calendario"
+        android:id="@+id/bt_calendario_boleto"
         android:layout_width="117dp"
         android:layout_height="36dp"
         android:text="Calendario"

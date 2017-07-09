@@ -16,7 +16,7 @@ import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterRegistro;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Registro;
 
 public class ShowProdutoFinalActivity extends Activity {
     private ListView registro;
