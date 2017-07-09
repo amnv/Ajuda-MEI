@@ -107,6 +107,7 @@
         <activity
             android:name=".caixa.registro.aquisicao_mat_prima.AdicionarAquisicaoActivity"
             android:label="@string/title_activity_adicionar_registro_aquisicao"/>
+
     </application>
 
 </manifest>
