@@ -5,54 +5,58 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
+import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterMateria;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.CaixaDaEmpresaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.AdicionarBoletoActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.DatabaseRegistroBoleto;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.boleto.PagamentoBoletoActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.venda_produto.DatabaseRegistroVenda;
+import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
 
 public class AquisicaoMatPrimaActivity extends Activity {
 
-    DatabaseRegistroAquisicao db;
+    DatabaseMateriaPrima db;
     ListView aquisicoes;
+    UsoGeral ug;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_aquisicao_mat_prima);
 
-        db = new DatabaseRegistroAquisicao(this);
+        db = new DatabaseMateriaPrima(this);
 
         aquisicoes = (ListView) findViewById(R.id.lista_registro_aquisicao);
-
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        MenuItem trocar = menu.add(0, 0, 0, "Adicionar");
-        trocar.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(AquisicaoMatPrimaActivity.this, AdicionarAquisicaoActivity.class);
-        startActivity(intent);
-        return (super.onOptionsItemSelected(item));
+        View empty = findViewById(R.id.empty_mat_prima);
+        aquisicoes.setEmptyView(empty);
+        aquisicoes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ItemMateriaPrima item = (ItemMateriaPrima) parent.getItemAtPosition(position);
+                ug = (UsoGeral) getApplication();
+                ug.setItem(item);
+                Intent intent = new Intent(AquisicaoMatPrimaActivity.this, ShowRegistroAquisicaoMatPrimaActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        List<Aquisicao> temp = db.getAllItens();
+        List<ItemMateriaPrima> temp = db.getAllItens();
         Toast.makeText(getApplicationContext(), "Qnt de itens: " + temp.size(), Toast.LENGTH_SHORT).show();
-        AquisicaoAdapter adapter = new AquisicaoAdapter(AquisicaoMatPrimaActivity.this, R.layout.registrolista, temp);
+        AdapterMateria adapter = new AdapterMateria(AquisicaoMatPrimaActivity.this, R.layout.itemlista, temp);
         if (temp != null) {
             aquisicoes.setAdapter(adapter);
         }

@@ -112,7 +112,10 @@
             android:label="@string/title_activity_adicionar_registro_aquisicao" />
         <activity
             android:name=".empregados.ListaEmpregadosActivity"
-            android:label="@string/title_activity_lista_empregados"></activity>
+            android:label="@string/title_activity_lista_empregados" />
+        <activity
+            android:name=".caixa.registro.aquisicao_mat_prima.ShowRegistroAquisicaoMatPrimaActivity"
+            android:label="@string/title_activity_show_registro_aquisicao_mat_prima"></activity>
     </application>
 
 </manifest>

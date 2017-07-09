@@ -110,7 +110,7 @@ public class AdicionarProdutoFinalActivity extends Activity {
                 double custoProducao = 0;
                 for(int i = 0; i < t1.size(); i++){
                     custoProducao += t2.get(i) * t1.get(i).getPreco();
-                    db.modify(t1.get(i), t2.get(i));
+                    db.modify(t1.get(i), t2.get(i), true);
                 }
                 BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
                 Bitmap bitmap = drawable.getBitmap();
