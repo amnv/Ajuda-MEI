@@ -1,24 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/registro_info"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        android:layout_height="20dp"
+        android:textSize="18sp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/registro_data"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="0dp" />
 
     <TextView
         android:id="@+id/registro_data"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textSize="12sp" />
+        android:layout_height="15dp"
+        android:textSize="12sp"
+        tools:layout_constraintTop_creator="1"
+        app:layout_constraintTop_toBottomOf="@+id/registro_info"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="-3dp"
+        tools:layout_editor_absoluteY="21dp" />
 
     <TextView
         android:id="@+id/registro_preco"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/registro_data"
+        android:layout_marginTop="-3dp"
+        app:layout_constraintTop_toBottomOf="@+id/registro_data"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/registro_data"
+        app:layout_constraintHorizontal_bias="0.0" />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

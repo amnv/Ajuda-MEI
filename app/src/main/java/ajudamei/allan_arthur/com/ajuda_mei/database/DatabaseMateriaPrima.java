@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Registro;
 
 /**
  * Created by Allan on 09/06/2017.
@@ -113,7 +113,7 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
         db.insertWithOnConflict(TABLE2_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
     }
 
-    public void modify(ItemMateriaPrima item, int quantidade){
+    public void modify(ItemMateriaPrima item, int quantidade, boolean op){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT " + _ID +" FROM "
                 + TABLE_NAME + " WHERE " + ITEM_NOME + "= '" + item.getNome()+ "'";
@@ -123,7 +123,12 @@ public class DatabaseMateriaPrima extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do{
                 ContentValues values = new ContentValues();
-                values.put(DatabaseMateriaPrima.ITEM_QUANTIDADE, item.getQuantidade() - quantidade);
+
+                if(op) {
+                    values.put(DatabaseMateriaPrima.ITEM_QUANTIDADE, item.getQuantidade() - quantidade);
+                } else {
+                    values.put(DatabaseMateriaPrima.ITEM_QUANTIDADE, item.getQuantidade() + quantidade);
+                }
 
                 db.update(TABLE_NAME, values, "_id= "+ cursor.getInt(0), null);
 

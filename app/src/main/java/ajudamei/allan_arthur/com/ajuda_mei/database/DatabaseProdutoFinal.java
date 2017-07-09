@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Registro;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.registro.Registro;
 
 /**
  * Created by Allan on 09/06/2017.

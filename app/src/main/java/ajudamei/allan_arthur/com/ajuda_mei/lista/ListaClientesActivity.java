@@ -15,12 +15,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterCliente;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.pessoa.AdapterCliente;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.mat_prima.ShowMatPrimaActivity;
+import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.materia_prima.ShowMatPrimaActivity;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Cliente;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.pessoa.Cliente;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemMateriaPrima;
 
 public class ListaClientesActivity extends Activity {
     private ListView itens;

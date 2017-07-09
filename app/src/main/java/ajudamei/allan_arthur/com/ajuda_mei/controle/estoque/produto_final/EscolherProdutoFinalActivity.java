@@ -12,12 +12,12 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterProduto;
+import ajudamei.allan_arthur.com.ajuda_mei.adapter.item.AdapterProduto;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
 import ajudamei.allan_arthur.com.ajuda_mei.controle.estoque.TipoEstoqueActivity;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemProdutoFinal;
 
 public class EscolherProdutoFinalActivity extends Activity {
     private DatabaseProdutoFinal db;

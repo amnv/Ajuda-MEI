@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.venda_produto.VendaProdutoActivity">
+    tools:context="ajudamei.allan_arthur.com.ajuda_mei.caixa.registro.venda.produto_final.VendaProdutoActivity">
 
     <ListView
         android:id="@+id/lista_registro_venda"

@@ -5,13 +5,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.List;
 
 import ajudamei.allan_arthur.com.ajuda_mei.R;
-import ajudamei.allan_arthur.com.ajuda_mei.adapter.AdapterEmpregado;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.Empregado;
 
 public class ListaEmpregadosActivity extends Activity {
     private ListView empregados;

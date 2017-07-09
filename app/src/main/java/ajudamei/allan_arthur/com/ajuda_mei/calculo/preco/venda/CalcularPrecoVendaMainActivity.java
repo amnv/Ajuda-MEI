@@ -20,7 +20,7 @@ public class CalcularPrecoVendaMainActivity extends Activity {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CalcularPrecoVendaMainActivity.this,CalculoPrecoVendaUmActivity.class);
+                Intent intent = new Intent(CalcularPrecoVendaMainActivity.this,CalcularPrecoVendaUmActivity.class);
                 startActivity(intent);
             }
         });

@@ -18,8 +18,8 @@ import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseMateriaPrima;
 import ajudamei.allan_arthur.com.ajuda_mei.database.DatabaseProdutoFinal;
 import ajudamei.allan_arthur.com.ajuda_mei.R;
 import ajudamei.allan_arthur.com.ajuda_mei.UsoGeral;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemMateriaPrima;
-import ajudamei.allan_arthur.com.ajuda_mei.domain.ItemProdutoFinal;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemMateriaPrima;
+import ajudamei.allan_arthur.com.ajuda_mei.domain.item.ItemProdutoFinal;
 
 public class AdicionarProdutoFinalActivity extends Activity {
     private DatabaseMateriaPrima db;
@@ -110,7 +110,7 @@ public class AdicionarProdutoFinalActivity extends Activity {
                 double custoProducao = 0;
                 for(int i = 0; i < t1.size(); i++){
                     custoProducao += t2.get(i) * t1.get(i).getPreco();
-                    db.modify(t1.get(i), t2.get(i));
+                    db.modify(t1.get(i), t2.get(i), true);
                 }
                 BitmapDrawable drawable = (BitmapDrawable) img.getDrawable();
                 Bitmap bitmap = drawable.getBitmap();
