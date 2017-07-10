@@ -30,7 +30,7 @@ public class AdicionarEmpregadoActivity extends Activity {
         db = new DatabaseEmpregado(this);
         nome = (EditText) findViewById(R.id.txt_nome);
         salario = (EditText) findViewById(R.id.txt_salario);
-        periodicidade = (EditText) findViewById(R.id.txt_per);
+        periodicidade = (EditText) findViewById(R.id.txt_periodicidade);
         add = (Button) findViewById(R.id.bt_add_empregado);
 
         add.setOnClickListener(new View.OnClickListener() {

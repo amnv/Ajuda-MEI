@@ -28,7 +28,7 @@ public class ListaEmpregadosActivity extends Activity {
         db = new DatabaseEmpregado(this);
 
         empregados = (ListView) findViewById(R.id.lista_empregados);
-        View empty = findViewById(R.id.empty_lista_clientes);
+        View empty = findViewById(R.id.empty_lista_empregados);
         empregados.setEmptyView(empty);
 
     }

@@ -69,19 +69,6 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_nome"
         tools:layout_constraintTop_creator="1" />
 
-    <EditText
-        android:id="@+id/txt_per"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:ems="10"
-        android:hint="(Em dias)"
-        android:inputType="textPersonName"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/txt_salario"
-        app:layout_constraintTop_toBottomOf="@+id/txt_salario"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/txt_salario" />
 
     <Button
         android:id="@+id/bt_add_empregado"
@@ -95,5 +82,16 @@
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
+
+    <EditText
+        android:id="@+id/txt_periodicidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="(Em dias)"
+        tools:layout_editor_absoluteX="153dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_salario" />
 
 </android.support.constraint.ConstraintLayout>
